@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.leakcanary:leakcanary-android:2.6@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/934a1643cdaba1b902ed98ae2fe082d9/jetified-leakcanary-android-2.6/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/934a1643cdaba1b902ed98ae2fe082d9/jetified-leakcanary-android-2.6/res" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/934a1643cdaba1b902ed98ae2fe082d9/jetified-leakcanary-android-2.6/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-android/2.6/79ede440a9096d56747bfd0ef77b7e1cee00a33b/leakcanary-android-2.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-android/2.6/bc7d9358465736dece14dfe28cb2a21eb58c27b7/leakcanary-android-2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
