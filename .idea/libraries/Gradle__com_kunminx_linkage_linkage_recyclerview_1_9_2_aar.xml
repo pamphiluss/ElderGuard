@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kunminx.linkage:linkage-recyclerview:1.9.2@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2a125599d55cf17efbc360ba260afd4/jetified-linkage-recyclerview-1.9.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2a125599d55cf17efbc360ba260afd4/jetified-linkage-recyclerview-1.9.2/res" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2a125599d55cf17efbc360ba260afd4/jetified-linkage-recyclerview-1.9.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.kunminx.linkage/linkage-recyclerview/1.9.2/c971a50b0ebc36b78cc3c17c3a0ea9d75a96ebbf/linkage-recyclerview-1.9.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.kunminx.linkage/linkage-recyclerview/1.9.2/1f75c45025fa3830d1bdee640ef1c409fcd9f7e1/linkage-recyclerview-1.9.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,20 +1,3 @@
-/*
- * Copyright (C) 2019 xuexiangjys(xuexiangjys@163.com)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
 package com.xuexiang.elderguard.activity;
 
 import android.annotation.SuppressLint;
@@ -39,11 +22,11 @@ import com.google.android.material.navigation.NavigationView;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
-import com.xuexiang.elderguard.fragment.AboutFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.fragment.Visition.VisitionFragment;
 import com.xuexiang.elderguard.fragment.profile.ProfileFragment;
-import com.xuexiang.elderguard.fragment.trending.TrendingFragment;
+import com.xuexiang.elderguard.fragment.relation.LinkageRecyclerViewElemeFragment;
+import com.xuexiang.elderguard.fragment.trending.echarts.EChartsAndroidFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.Utils;
 import com.xuexiang.elderguard.utils.XToastUtils;
@@ -118,7 +101,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         //主页内容填充
         BaseFragment[] fragments = new BaseFragment[]{
                 new VisitionFragment(),
-                new TrendingFragment(),
+                new EChartsAndroidFragment(),
                 new ProfileFragment()
         };
         FragmentAdapter<BaseFragment> adapter = new FragmentAdapter<>(getSupportFragmentManager(), fragments);
@@ -177,7 +160,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         openNewPage(SettingsFragment.class);
                         break;
                     case R.id.nav_about:
-                        openNewPage(AboutFragment.class);
+                        openNewPage(LinkageRecyclerViewElemeFragment.class);
                         break;
                     default:
                         XToastUtils.toast("点击了:" + menuItem.getTitle());

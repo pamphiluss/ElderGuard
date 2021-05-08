@@ -3,21 +3,30 @@ package com.xuexiang.elderguard.utils;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
+import com.google.gson.reflect.TypeToken;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.adapter.entity.NewInfo;
 import com.xuexiang.elderguard.entity.EgUser;
 import com.xuexiang.elderguard.entity.EgVisit;
+import com.xuexiang.elderguard.fragment.relation.eleme.ElemeGroupedItem;
 import com.xuexiang.xaop.annotation.MemoryCache;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xui.adapter.simple.AdapterItem;
 import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
+import com.xuexiang.xutil.net.JsonUtil;
+import com.xuexiang.xutil.resource.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class DemoDataProvider {
+    @MemoryCache
+    public static List<ElemeGroupedItem> getElemeGroupItems() {
+        return JsonUtil.fromJson(ResourceUtils.readStringFromAssert("eleme.json"), new TypeToken<List<ElemeGroupedItem>>() {
+        }.getType());
+    }
 
     public static String[] titles = new String[]{
             "如今老龄化不断加剧",

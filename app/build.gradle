@@ -88,9 +88,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation deps.junit
     androidTestImplementation deps.runner
     androidTestImplementation deps.espresso.core
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
 //XUtil
     implementation 'com.github.xuexiangjys.XUtil:xutil-core:2.0.0'
     implementation 'com.github.xuexiangjys.XUtil:xutil-sub:2.0.0'
@@ -141,6 +146,12 @@ dependencies {
     //磁盘缓存的依赖包
     implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation 'com.alibaba:fastjson:1.1.54.android'
+    //双列表联动
+    implementation 'com.kunminx.linkage:linkage-recyclerview:1.9.2'
+    //Android图表库
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //ECharts图表库
+    implementation 'com.github.abel533:ECharts:3.0.0.2'
 }
 //自动添加X-Library依赖
 apply from: 'x-library.gradle'

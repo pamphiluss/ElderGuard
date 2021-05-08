@@ -8,11 +8,16 @@
 
 
     <!--Toast，可自定义喜欢的颜色-->
-    <color name="toast_default_text_color" tools:ignore="PrivateResource">@color/xui_config_color_white</color>
-    <color name="toast_error_color" tools:ignore="PrivateResource">@color/xui_config_color_red</color>
+    <color name="toast_default_text_color" tools:ignore="PrivateResource">
+        @color/xui_config_color_white
+    </color>
+    <color name="toast_error_color" tools:ignore="PrivateResource">@color/xui_config_color_red
+    </color>
     <color name="toast_info_color" tools:ignore="PrivateResource">@color/colorAccent</color>
     <color name="toast_success_color" tools:ignore="PrivateResource">#388E3C</color>
-    <color name="toast_warning_color" tools:ignore="PrivateResource">@color/xui_config_color_waring</color>
+    <color name="toast_warning_color" tools:ignore="PrivateResource">
+        @color/xui_config_color_waring
+    </color>
     <color name="toast_normal_tint_color" tools:ignore="PrivateResource">#353A3E</color>
 
     <color name="app_color_theme_1">#EF5362</color> <!-- Grapefruit -->
@@ -24,6 +29,7 @@
     <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
     <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
     <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+    <color name="color_red">#FD2E4A</color>
 
 
 </resources>

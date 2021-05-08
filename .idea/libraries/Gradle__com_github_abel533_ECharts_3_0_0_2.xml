@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.abel533:ECharts:3.0.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.abel533/ECharts/3.0.0.2/a548e81b5c3bf9f7e9d4a5ae432b154916738ea1/ECharts-3.0.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.abel533/ECharts/3.0.0.2/38ae4db935bdde590d817b74a8ee72d204932fbc/ECharts-3.0.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.abel533/ECharts/3.0.0.2/113f5a6aefccda3a5341a75f2cd4c6b1886481bf/ECharts-3.0.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

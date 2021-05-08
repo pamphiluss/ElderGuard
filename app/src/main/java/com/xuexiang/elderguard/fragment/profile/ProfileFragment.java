@@ -9,25 +9,17 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseFragment;
-import com.xuexiang.elderguard.fragment.AboutFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.xaop.annotation.Permission;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xaop.consts.PermissionConsts;
-import com.xuexiang.xhttp2.XHttp;
-import com.xuexiang.xhttp2.callback.impl.IProgressResponseCallBack;
-import com.xuexiang.xhttp2.subsciber.ProgressLoadingSubscriber;
-import com.xuexiang.xhttp2.utils.Utils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 import com.xuexiang.xutil.app.PathUtils;
-import com.xuexiang.xutil.common.StringUtils;
-import com.xuexiang.xutil.file.FileUtils;
-import com.xuexiang.xutil.tip.ToastUtils;
 
 import butterknife.BindView;
 
@@ -95,9 +87,6 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
         switch (view.getId()) {
             case R.id.menu_settings:
                 openNewPage(SettingsFragment.class);
-                break;
-            case R.id.menu_about:
-                openNewPage(AboutFragment.class);
                 break;
             case R.id.mine_pic:
                 selectPicture();
