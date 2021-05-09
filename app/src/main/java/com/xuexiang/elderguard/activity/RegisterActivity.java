@@ -1,21 +1,23 @@
 package com.xuexiang.elderguard.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.xuexiang.elderguard.core.BaseActivity;
 import com.xuexiang.elderguard.fragment.LoginFragment;
+import com.xuexiang.elderguard.fragment.RegisterFragment;
 import com.xuexiang.xui.utils.KeyboardUtils;
 import com.xuexiang.xui.utils.StatusBarUtils;
 import com.xuexiang.xutil.display.Colors;
 
-
-public class LoginActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        openPage(LoginFragment.class, getIntent().getExtras());
+        openPage(RegisterFragment.class, getIntent().getExtras());
     }
 
     @Override

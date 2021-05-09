@@ -3,9 +3,6 @@ package com.xuexiang.elderguard.utils;
 
 /**
  * SharedPreferences管理工具基类
- *
- * @author xuexiang
- * @since 2018/11/27 下午5:16
  */
 public final class SettingUtils {
 

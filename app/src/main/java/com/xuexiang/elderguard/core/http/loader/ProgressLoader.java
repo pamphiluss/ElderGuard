@@ -23,9 +23,6 @@ import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader;
 
 /**
  * 创建进度加载者
- *
- * @author xuexiang
- * @since 2019-07-02 12:51
  */
 public final class ProgressLoader {
 

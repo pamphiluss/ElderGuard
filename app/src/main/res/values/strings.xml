@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">老人卫士</string>
     <string name="app_browser_name">通用浏览器</string>
     <string name="service_api_key">service_api_key</string>
@@ -16,16 +16,6 @@
     <string name="contact">通讯录</string>
     <string name="menu_settings">设置</string>
     <string name="menu_about">关于</string>
-
-    <string name="about_copyright">© %1$s xuexiangjys All rights reserved.</string>
-    <string name="about_item_homepage">访问官网</string>
-    <string name="about_item_author_github">联系作者</string>
-    <string name="about_item_donation_link">捐赠作者</string>
-    <string name="about_item_add_qq_group">QQ交流群</string>
-    <string name="url_project_github">https://github.com/xuexiangjys/TemplateAppProject</string>
-    <string name="url_author_github">https://gitee.com/xuexiangjys/xuexiangjys</string>
-    <string name="url_donation_link">https://gitee.com/xuexiangjys/Resource/blob/master/doc/sponsor.md</string>
-    <string name="url_add_qq_group">http://qm.qq.com/cgi-bin/qm/qr?k=tiP-E6rDf0y77PRNfp2lNVcc9RsglPCM</string>
 
     <string name="lab_yes">是</string>
     <string name="lab_no">否</string>
@@ -48,6 +38,10 @@
     <string name="title_login">登录</string>
     <string name="title_login_by_verify_code">验证码登录</string>
     <string name="title_login_by_password">密码登录</string>
+    <string name="title_register_by_password">请输入注册密码</string>
+    <string name="title_register_by_password_ag">请再次输入注册密码</string>
+    <string name="title_fg_by_password">请输入原密码</string>
+    <string name="title_fg_by_password_ag">请输入新密码</string>
     <string name="title_register">注册</string>
     <string name="lab_forget_password">忘记密码?</string>
     <string name="lab_login_by_verify_code">验证码登录</string>
@@ -62,10 +56,10 @@
     <string name="tip_password_error">密码必须是8~18位字母和数字的组合！</string>
     <string name="tip_new_password_error">新密码必须是8~18位大小写字母和数字的组合！</string>
     <string name="tip_phone_number_error">无效的手机号！</string>
-    <string name="regex_phone_number">^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(16[6])|(17[0,1,3,5-8])|(18[0-9])|(19[8,9]))\\d{8}$</string>
+    <string name="regex_phone_number" tools:ignore="TypographyDashes">^((13[0–9])|(14[5,7])|(15[0-3,5-9])|(16[6])|(17[0,1,3,5-8])|(18[0-9])|(19[8,9]))\\d{8}$</string>
     <string name="tip_verify_code_error">请输入4位数验证码</string>
     <string name="regex_verify_code">^\\d{4}$</string>
-    <string name="regex_password">^(?:(?=.*[a–zA-Z])(?=.*[0-9])).{8,18}$</string>
+    <string name="regex_password" tools:ignore="TypographyDashes">^(?:(?=.*[a–zA–Z])(?=.*[0-9])).{8,18}$</string>
     <string name="title_forget_password">重置密码</string>
     <string name="lab_register_account">点击注册即表示同意</string>
     <string name="lab_service_protocol"><![CDATA[<用户协议>]]></string>
@@ -75,14 +69,15 @@
     <string name="label_next">下一条</string>
     <string name="tip_ignore_message">以后不再提示此类信息</string>
     <string name="tip_title">你知道吗？</string>
-    <string name="other_login">其他登录方式</string>
+    <string name="register">注册</string>
     <string name="forget_pass">忘记密码</string>
     <string name="agree_meet">登陆/注册代表您已阅读并同意</string>
     <string name="user_agreement">用户协议</string>
     <string name="pracy_agreement">隐私政策</string>
     <string name="visition">访问记录</string>
     <string name="acq">熟人</string>
-    <string name="visit_time">1999-9-9 12:00</string>
+    <string name="visit_time" tools:ignore="TypographyDashes">1999-9-9 12:00</string>
     <string name="default_name">张三</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
