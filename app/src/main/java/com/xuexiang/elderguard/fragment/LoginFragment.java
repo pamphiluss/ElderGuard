@@ -108,6 +108,7 @@ public class LoginFragment extends BaseFragment {
                 break;
             case R.id.tv_register:
                 XToastUtils.info("注册");
+//                ActivityUtils.startActivity(RegisterActivity.class);
                 ActivityUtils.startActivity(RegisterActivity.class);
                 break;
             case R.id.tv_forget_password:

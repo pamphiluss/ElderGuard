@@ -1,6 +1,7 @@
 package com.xuexiang.elderguard.utils;
 
 import com.google.gson.reflect.TypeToken;
+import com.xuexiang.elderguard.entity.EgRelationship;
 import com.xuexiang.elderguard.entity.EgStranger;
 import com.xuexiang.elderguard.entity.EgUser;
 import com.xuexiang.elderguard.entity.EgVisit;
@@ -72,6 +73,20 @@ public class DataProvider {
         List<EgStranger> list = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             list.add(new EgStranger());
+        }
+        return list;
+    }
+
+    /**
+     * 用于占位的空信息
+     *
+     * @return
+     */
+    @MemoryCache
+    public static List<EgRelationship> getEmptyRelaInfo() {
+        List<EgRelationship> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(new EgRelationship());
         }
         return list;
     }
