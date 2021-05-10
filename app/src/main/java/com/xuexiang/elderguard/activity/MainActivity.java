@@ -42,7 +42,7 @@ import com.xuexiang.xutil.display.Colors;
 
 import butterknife.BindView;
 
-import static com.xuexiang.elderguard.utils.DemoDataProvider.getUserImgUrl;
+import static com.xuexiang.elderguard.utils.DataProvider.getUserImgUrl;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener, ClickUtils.OnClick2ExitListener, Toolbar.OnMenuItemClickListener {

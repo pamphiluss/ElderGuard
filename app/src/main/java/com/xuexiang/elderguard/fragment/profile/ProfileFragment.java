@@ -24,7 +24,7 @@ import com.xuexiang.xutil.app.PathUtils;
 import butterknife.BindView;
 
 import static android.app.Activity.RESULT_OK;
-import static com.xuexiang.elderguard.utils.DemoDataProvider.getUserImgUrl;
+import static com.xuexiang.elderguard.utils.DataProvider.getUserImgUrl;
 
 
 @Page(anim = CoreAnim.none)

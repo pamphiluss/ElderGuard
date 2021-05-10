@@ -1,6 +1,7 @@
 package com.xuexiang.elderguard.utils;
 
 import com.google.gson.reflect.TypeToken;
+import com.xuexiang.elderguard.entity.EgStranger;
 import com.xuexiang.elderguard.entity.EgUser;
 import com.xuexiang.elderguard.entity.EgVisit;
 import com.xuexiang.elderguard.fragment.relation.eleme.ElemeGroupedItem;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DemoDataProvider {
+public class DataProvider {
     @MemoryCache
     public static List<ElemeGroupedItem> getElemeGroupItems() {
         return JsonUtil.fromJson(ResourceUtils.readStringFromAssert("eleme.json"), new TypeToken<List<ElemeGroupedItem>>() {
@@ -61,6 +62,19 @@ public class DemoDataProvider {
         }
         return list;
     }
+    /**
+     * 用于占位的空信息
+     *
+     * @return
+     */
+    @MemoryCache
+    public static List<EgStranger> getEmptyStrVisitInfo() {
+        List<EgStranger> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(new EgStranger());
+        }
+        return list;
+    }
 
     public static String getBaseImgUrl() {
         String baseUrl = XHttp.getBaseUrl().trim();
@@ -74,6 +88,10 @@ public class DemoDataProvider {
 
     public static String getVisitImgUrl(EgVisit egVisit) {
         return getBaseImgUrl() + egVisit.getImage();
+    }
+
+    public static String getStrVisitImgUrl(EgStranger egStranger) {
+        return getBaseImgUrl() + egStranger.getImage();
     }
 
     public static String getUserImgUrl(EgUser egUser) {

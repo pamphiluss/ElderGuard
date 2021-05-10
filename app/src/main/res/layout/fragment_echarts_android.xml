@@ -25,34 +25,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <com.xuexiang.xui.widget.alpha.XUIAlphaButton
             android:id="@+id/btn_bar_chart"
             style="@style/Button.Primary.wrap"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="柱状图" />
+            android:text="本周和上周访问数据对比图" />
 
         <com.xuexiang.xui.widget.alpha.XUIAlphaButton
             android:id="@+id/btn_line_chart"
             style="@style/Button.Primary.wrap"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="折线图" />
+            android:text="年度历史访问统计折线图" />
 
         <com.xuexiang.xui.widget.alpha.XUIAlphaButton
             android:id="@+id/btn_pie_chart"
             style="@style/Button.Primary.wrap"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="饼图" />
+            android:text="本月熟客和生客饼状图" />
+
+        <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+            android:id="@+id/btn_hot_chart"
+            style="@style/Button.Primary.wrap"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="本月访问折线图(显示到当前日期)" />
 
     </LinearLayout>
 

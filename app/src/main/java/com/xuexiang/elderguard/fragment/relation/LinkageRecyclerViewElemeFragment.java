@@ -12,7 +12,7 @@ import com.xuexiang.elderguard.core.BaseFragment;
 import com.xuexiang.elderguard.fragment.relation.custom.CustomLinkagePrimaryAdapterConfig;
 import com.xuexiang.elderguard.fragment.relation.eleme.ElemeGroupedItem;
 import com.xuexiang.elderguard.fragment.relation.eleme.ElemeSecondaryAdapterConfig;
-import com.xuexiang.elderguard.utils.DemoDataProvider;
+import com.xuexiang.elderguard.utils.DataProvider;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xui.utils.SnackbarUtils;
@@ -56,7 +56,9 @@ public class LinkageRecyclerViewElemeFragment extends BaseFragment implements Cu
      */
     @Override
     protected void initViews() {
-        linkage.init(DemoDataProvider.getElemeGroupItems(), new CustomLinkagePrimaryAdapterConfig(this), new ElemeSecondaryAdapterConfig(this));
+        System.out.println("**************");
+        System.out.println(DataProvider.getElemeGroupItems().toString());
+        linkage.init(DataProvider.getElemeGroupItems(), new CustomLinkagePrimaryAdapterConfig(this), new ElemeSecondaryAdapterConfig(this));
     }
 
     @Override
@@ -71,6 +73,6 @@ public class LinkageRecyclerViewElemeFragment extends BaseFragment implements Cu
 
     @Override
     public void onGoodAdd(View view, BaseGroupedItem<ElemeGroupedItem.ItemInfo> item) {
-        SnackbarUtils.Short(view, "添加：" + item.info.getTitle()).show();
+
     }
 }

@@ -23,42 +23,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.xuexiang.xui.widget.imageview.RadiusImageView
-                    android:id="@+id/visit_iv_avatar"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/visit"
-                    app:riv_is_circle="true" />
-
-                <TextView
-                    android:id="@+id/visit_toname"
-                    style="@style/TextStyle.Explain"
-                    android:layout_gravity="end|center_vertical"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/visition"
-                    android:textColor="@color/xui_config_color_pure_black" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_tag"
-                style="@style/TextStyle.Explain"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:text="@string/acq" />
-
-        </FrameLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,37 +36,31 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/visit_name"
+                    android:id="@+id/visit_name_rela"
                     style="@style/TextStyle.Content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:gravity="start|center_vertical"
+                    android:gravity="center"
                     android:maxLines="2"
                     android:singleLine="false"
                     android:text="@string/default_name"
                     android:textColor="@color/xui_config_color_pure_black" />
 
                 <TextView
-                    android:id="@+id/visit_time"
+                    android:id="@+id/visit_time_rela"
                     style="@style/TextStyle.Explain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:ellipsize="end"
-                    android:gravity="start|center_vertical"
+                    android:gravity="center"
                     android:maxLines="2"
                     android:singleLine="false"
                     android:text="@string/visit_time"
                     android:textColor="?attr/xui_config_color_content_text" />
 
             </LinearLayout>
-
-            <com.xuexiang.xui.widget.imageview.RadiusImageView
-                android:id="@+id/visit_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher"
-                app:riv_border_width="0dp"
-                app:riv_corner_radius="5dp" />
 
         </LinearLayout>
 
