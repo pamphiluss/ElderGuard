@@ -51,12 +51,6 @@
             android:title="@string/contact" />
 
         <item
-            android:id="@+id/nav_notifications"
-            android:checkable="false"
-            android:icon="@drawable/ic_menu_notifications"
-            android:title="@string/menu_notifications" />
-
-        <item
             android:id="@+id/nav_starred"
             android:checkable="false"
             android:icon="@drawable/ic_menu_star"
@@ -71,11 +65,6 @@
             android:checkable="false"
             android:icon="@drawable/ic_menu_settings"
             android:title="@string/menu_settings" />
-        <item
-            android:id="@+id/nav_about"
-            android:checkable="false"
-            android:icon="@drawable/ic_menu_about"
-            android:title="@string/menu_about" />
     </group>
 
 

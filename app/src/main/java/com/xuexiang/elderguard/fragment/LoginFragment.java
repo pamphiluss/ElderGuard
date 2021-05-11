@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.activity.ForgetPasswordActivity;
+import com.xuexiang.elderguard.activity.MainAcitivty1;
 import com.xuexiang.elderguard.activity.MainActivity;
 import com.xuexiang.elderguard.activity.RegisterActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
@@ -109,7 +110,7 @@ public class LoginFragment extends BaseFragment {
             case R.id.tv_register:
                 XToastUtils.info("注册");
 //                ActivityUtils.startActivity(RegisterActivity.class);
-                ActivityUtils.startActivity(RegisterActivity.class);
+                ActivityUtils.startActivity(MainAcitivty1.class);
                 break;
             case R.id.tv_forget_password:
                 XToastUtils.info("忘记密码");

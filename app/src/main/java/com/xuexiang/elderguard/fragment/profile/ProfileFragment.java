@@ -33,8 +33,6 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
     RadiusImageView rivHeadPic;
     @BindView(R.id.menu_settings)
     SuperTextView menuSettings;
-    @BindView(R.id.menu_about)
-    SuperTextView menuAbout;
     @BindView(R.id.mine_pic)
     SuperTextView minePic;
     private static final int REQUEST_CODE_SELECT_PICTURE = 2000;
@@ -77,7 +75,6 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
     @Override
     protected void initListeners() {
         menuSettings.setOnSuperTextViewClickListener(this);
-        menuAbout.setOnSuperTextViewClickListener(this);
 
     }
 

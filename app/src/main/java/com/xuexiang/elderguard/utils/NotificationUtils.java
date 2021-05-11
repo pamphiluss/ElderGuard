@@ -77,10 +77,10 @@ public class NotificationUtils {
                 //必须
                 .setContentTitle("xu_hong_yi")
                 //必须
-                .setContentText("2021-5-10 18:50")
+                .setContentText("2021-5-10 20:45")
                 //必须
                 .setLargeIcon(BitmapFactory.decodeResource
-                        (getResources(), R.drawable.ic_launcher))
+                        (getResources(), R.drawable.test))
                 .setContentIntent(getPendingIntent())
                 .setAutoCancel(true)
                 .setTimeoutAfter(3000)
