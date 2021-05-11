@@ -162,7 +162,7 @@ public class EChartsAndroidFragment extends BaseWebViewFragment {
             GsonOption option = new GsonOption();
             option.toolbox().show(false);
             option.calculable(true);
-            option.tooltip().trigger(Trigger.axis).formatter("{a} : {c}个");
+            option.tooltip().trigger(Trigger.axis).formatter("{b}号: {c}个");
             option.legend().data("总数", "熟客", "生客");
 
             ValueAxis valueAxis = new ValueAxis();
@@ -173,13 +173,13 @@ public class EChartsAndroidFragment extends BaseWebViewFragment {
             categoryAxis.axisLine().onZero(false);
             categoryAxis.axisLabel().formatter("{value}号");
             categoryAxis.boundaryGap(false);
-            categoryAxis.data(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            categoryAxis.data(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
             option.xAxis(categoryAxis);
 
 
-            Line line1 = new Line("总数").smooth(true).data(2, 0, 0, 1, 3, 0, 0, 0, 3);
-            Line line2 = new Line("熟客").smooth(true).data(2, 0, 0, 0, 2, 0, 0, 0, 3);
-            Line line3 = new Line("生客").smooth(true).data(0, 0, 0, 1, 1, 0, 0, 0, 0);
+            Line line1 = new Line("总数").smooth(true).data(2, 0, 0, 1, 3, 0, 0, 0, 2, 1);
+            Line line2 = new Line("熟客").smooth(true).data(2, 0, 0, 0, 2, 0, 0, 0, 2, 1);
+            Line line3 = new Line("生客").smooth(true).data(0, 0, 0, 1, 1, 0, 0, 0, 0, 0);
             option.series(line1, line2, line3);
             return option.toString();
         }

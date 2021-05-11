@@ -80,5 +80,6 @@
     <string name="visit_time" tools:ignore="TypographyDashes">1999-9-9 12:00</string>
     <string name="default_name">张三</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="zhang_san">zhang san</string>
 
 </resources>

@@ -14,16 +14,17 @@ import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.xuexiang.elderguard.R;
-import com.xuexiang.elderguard.adapter.base.RelationAdapter;
+import com.xuexiang.elderguard.adapter.base.AcqAdapter;
 import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
-import com.xuexiang.elderguard.entity.EgRelationship;
-import com.xuexiang.elderguard.utils.RouterUtils;
+import com.xuexiang.elderguard.entity.EgAcquaintance;
+import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xhttp2.exception.ApiException;
 import com.xuexiang.xhttp2.utils.TypeUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
+import com.xuexiang.xrouter.launcher.XRouter;
 
 import java.util.List;
 
@@ -31,8 +32,8 @@ import butterknife.BindView;
 import io.reactivex.Observable;
 
 
-@Page(name = "通讯录")
-public class RelationFragment extends XPageFragment implements SmartViewHolder.OnItemLongClickListener, SmartViewHolder.OnViewItemClickListener, SmartViewHolder.OnItemClickListener {
+@Page(name = "成员")
+public class RelationMeFragment extends XPageFragment implements SmartViewHolder.OnItemLongClickListener, SmartViewHolder.OnViewItemClickListener, SmartViewHolder.OnItemClickListener {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -41,29 +42,11 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout mRefreshLayout;
 
-    private RelationAdapter mRelationAdapter;
-
-    @Override
-    protected TitleBar initTitleBar() {
-        TitleBar titleBar = super.initTitleBar().setLeftClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        titleBar.addAction(new TitleBar.TextAction("添加") {
-            @Override
-            public void performAction(View view) {
-
-            }
-        });
-        return titleBar;
-    }
+    private AcqAdapter acqAdapter;
 
     @Override
     public void onItemClick(View itemView, int position) {
         // TODO:
-        openPageForResult(RelationMeFragment.class, RouterUtils.getBundle("rela", mRelationAdapter.getItem(position)), 1000);
     }
 
     @Override
@@ -78,14 +61,37 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_relation;
+        return R.layout.fragment_me;
     }
 
     @Override
     protected void initViews() {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(mRelationAdapter = new RelationAdapter());
+        recyclerView.setAdapter(acqAdapter = new AcqAdapter());
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    @Override
+    protected void initArgs() {
+        super.initArgs();
+        XRouter.getInstance().inject(this);
+    }
+
+    @Override
+    protected TitleBar initTitleBar() {
+        TitleBar titleBar = super.initTitleBar().setLeftClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        titleBar.addAction(new TitleBar.TextAction("保存") {
+            @Override
+            public void performAction(View view) {
+
+            }
+        });
+        return titleBar;
     }
 
     @Override
@@ -93,34 +99,31 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
         mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(final @NonNull RefreshLayout refreshLayout) {
-                getRelationList(refreshLayout);
+                getAcqList(refreshLayout);
             }
         });
 
-        mRelationAdapter.setOnItemClickListener(this);
-        mRelationAdapter.setOnItemLongClickListener(this);
-        mRelationAdapter.setItemViewOnClickListener(this);
+        acqAdapter.setOnItemClickListener(this);
+        acqAdapter.setOnItemLongClickListener(this);
+        acqAdapter.setItemViewOnClickListener(this);
         mRefreshLayout.autoRefresh();
     }
 
-    /**
-     * 获取用户信息
-     *
-     * @param refreshLayout
-     */
     @SuppressLint("CheckResult")
-    private void getRelationList(@NonNull final RefreshLayout refreshLayout) {
-        Observable<List<EgRelationship>> observable = XHttp.get("/relation/getAllRelation")
+    private void getAcqList(@NonNull final RefreshLayout refreshLayout) {
+        Observable<List<EgAcquaintance>> observable = XHttp.get("/Acq/getAcqByUserAndRelation")
+                .params("userId", TokenManager.getInstance().getLoginUser().getId())
+                .params("relathionId", 1)
                 .syncRequest(false)
                 .onMainThread(true)
-                .execute(TypeUtils.getListType(EgRelationship.class));
+                .execute(TypeUtils.getListType(EgAcquaintance.class));
 
-        observable.subscribeWith(new TipRequestSubscriber<List<EgRelationship>>() {
+        observable.subscribeWith(new TipRequestSubscriber<List<EgAcquaintance>>() {
             @Override
-            protected void onSuccess(List<EgRelationship> response) {
+            protected void onSuccess(List<EgAcquaintance> response) {
                 refreshLayout.finishRefresh(true);
                 if (response != null && response.size() > 0) {
-                    mRelationAdapter.refresh(response);
+                    acqAdapter.refresh(response);
                     mLlStateful.showContent();
                 } else {
                     mLlStateful.showEmpty();

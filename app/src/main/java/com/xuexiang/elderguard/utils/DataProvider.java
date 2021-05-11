@@ -1,6 +1,7 @@
 package com.xuexiang.elderguard.utils;
 
 import com.google.gson.reflect.TypeToken;
+import com.xuexiang.elderguard.entity.EgAcquaintance;
 import com.xuexiang.elderguard.entity.EgRelationship;
 import com.xuexiang.elderguard.entity.EgStranger;
 import com.xuexiang.elderguard.entity.EgUser;
@@ -83,6 +84,20 @@ public class DataProvider {
      * @return
      */
     @MemoryCache
+    public static List<EgAcquaintance> getEmptyAcqVisitInfo() {
+        List<EgAcquaintance> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(new EgAcquaintance());
+        }
+        return list;
+    }
+
+    /**
+     * 用于占位的空信息
+     *
+     * @return
+     */
+    @MemoryCache
     public static List<EgRelationship> getEmptyRelaInfo() {
         List<EgRelationship> list = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -107,6 +122,10 @@ public class DataProvider {
 
     public static String getStrVisitImgUrl(EgStranger egStranger) {
         return getBaseImgUrl() + egStranger.getImage();
+    }
+
+    public static String getAcqVisitImgUrl(EgAcquaintance egAcquaintance) {
+        return getBaseImgUrl() + egAcquaintance.getImage();
     }
 
     public static String getUserImgUrl(EgUser egUser) {
