@@ -2,12 +2,15 @@
   <library name="Gradle: com.umeng.umsdk:common:2.0.2">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/2280dcc40df0624903ead95c96118fc989f9d2da/common-2.0.2.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/2280dcc40df0624903ead95c96118fc989f9d2da/common-2.0.2.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/af81183dccf3a8f37b12f3ace693460c80c1c052/common-2.0.2-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/af81183dccf3a8f37b12f3ace693460c80c1c052/common-2.0.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/af81183dccf3a8f37b12f3ace693460c80c1c052/common-2.0.2-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.umeng.umsdk/common/2.0.2/af81183dccf3a8f37b12f3ace693460c80c1c052/common-2.0.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

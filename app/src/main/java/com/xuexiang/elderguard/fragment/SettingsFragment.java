@@ -2,6 +2,8 @@ package com.xuexiang.elderguard.fragment;
 
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseFragment;
+import com.xuexiang.elderguard.manager.TokenManager;
+import com.xuexiang.elderguard.utils.RouterUtils;
 import com.xuexiang.elderguard.utils.TokenUtils;
 import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xaop.annotation.SingleClick;
@@ -48,6 +50,8 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
     public void onClick(SuperTextView superTextView) {
         switch (superTextView.getId()) {
             case R.id.menu_common:
+                openPageForResult(ChangeUserInfoFragment.class, RouterUtils.getBundle("egUser", TokenManager.getInstance().getLoginUser()), 1000);
+                break;
             case R.id.menu_privacy:
             case R.id.menu_push:
             case R.id.menu_helper:

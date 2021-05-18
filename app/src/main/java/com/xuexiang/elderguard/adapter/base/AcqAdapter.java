@@ -8,7 +8,6 @@ import com.scwang.smartrefresh.layout.adapter.SmartRecyclerAdapter;
 import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.entity.EgAcquaintance;
-import com.xuexiang.elderguard.entity.EgRelationship;
 
 import static com.xuexiang.elderguard.utils.DataProvider.getAcqVisitImgUrl;
 
@@ -25,8 +24,8 @@ public class AcqAdapter extends SmartRecyclerAdapter<EgAcquaintance> {
     protected void onBindViewHolder(SmartViewHolder holder, EgAcquaintance model, int position) {
         if (model != null) {
 
-            holder.text(R.id.acq_name, model.getCrdate());
-            holder.text(R.id.acq_nickname, model.getName());
+            holder.text(R.id.acq_name, model.getName());
+            holder.text(R.id.acq_nickname, model.getNickname());
             ImageView picture = holder.findViewById(R.id.acq_image);
             RequestOptions options = new RequestOptions()
                     .centerCrop()

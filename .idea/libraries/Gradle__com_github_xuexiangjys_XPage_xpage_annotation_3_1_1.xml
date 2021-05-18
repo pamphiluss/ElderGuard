@@ -2,12 +2,15 @@
   <library name="Gradle: com.github.xuexiangjys.XPage:xpage-annotation:3.1.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/47e342effeabc21b4617572e2787e5abbc77f1a8/xpage-annotation-3.1.1.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/47e342effeabc21b4617572e2787e5abbc77f1a8/xpage-annotation-3.1.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/cab75522ca44b24e9140fb96c45c6372dae0379c/xpage-annotation-3.1.1-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/cab75522ca44b24e9140fb96c45c6372dae0379c/xpage-annotation-3.1.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/9b792f6a89badb8365a02d70353b15c076643426/xpage-annotation-3.1.1-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-annotation/3.1.1/9b792f6a89badb8365a02d70353b15c076643426/xpage-annotation-3.1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

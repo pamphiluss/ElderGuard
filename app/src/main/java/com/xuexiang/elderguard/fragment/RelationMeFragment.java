@@ -17,6 +17,7 @@ import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.adapter.base.AcqAdapter;
 import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.entity.EgAcquaintance;
+import com.xuexiang.elderguard.entity.EgRelationship;
 import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xhttp2.exception.ApiException;
@@ -24,6 +25,7 @@ import com.xuexiang.xhttp2.utils.TypeUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
+import com.xuexiang.xrouter.annotation.AutoWired;
 import com.xuexiang.xrouter.launcher.XRouter;
 
 import java.util.List;
@@ -35,6 +37,8 @@ import io.reactivex.Observable;
 @Page(name = "成员")
 public class RelationMeFragment extends XPageFragment implements SmartViewHolder.OnItemLongClickListener, SmartViewHolder.OnViewItemClickListener, SmartViewHolder.OnItemClickListener {
 
+    @AutoWired
+    EgRelationship relation;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.ll_stateful)
@@ -85,10 +89,10 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
 
             }
         });
-        titleBar.addAction(new TitleBar.TextAction("保存") {
+        titleBar.addAction(new TitleBar.TextAction("添加") {
             @Override
             public void performAction(View view) {
-
+                openPage(AddAcqInfoFragment.class);
             }
         });
         return titleBar;
@@ -113,7 +117,7 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
     private void getAcqList(@NonNull final RefreshLayout refreshLayout) {
         Observable<List<EgAcquaintance>> observable = XHttp.get("/Acq/getAcqByUserAndRelation")
                 .params("userId", TokenManager.getInstance().getLoginUser().getId())
-                .params("relathionId", 1)
+                .params("relathionId", relation.getRelationid())
                 .syncRequest(false)
                 .onMainThread(true)
                 .execute(TypeUtils.getListType(EgAcquaintance.class));

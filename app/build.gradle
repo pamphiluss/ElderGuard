@@ -153,11 +153,11 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     //ECharts图表库
     implementation 'com.github.abel533:ECharts:3.0.0.2'
-
     implementation 'com.github.gturedi:stateful-layout:1.2.1'
-
-    compile 'com.android.support:appcompat-v7:27.0.1'
-    compile 'com.android.support:design:27.0.1'
+    implementation 'com.android.support:appcompat-v7:27.0.1'
+    implementation 'com.android.support:design:27.0.1'
+    implementation 'com.github.xuexiangjys:RxUtil2:1.2.0'
+    implementation 'com.mylhyl:circleDialog:5.3.7.1'
 }
 //自动添加X-Library依赖
 apply from: 'x-library.gradle'

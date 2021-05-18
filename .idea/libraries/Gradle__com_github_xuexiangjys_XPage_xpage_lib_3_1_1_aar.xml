@@ -4,12 +4,17 @@
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/869bb2b0b64a91ad1e9cee334e047d7a/jetified-xpage-lib-3.1.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-lib/3.1.1/9516f3243bf1523bac5c2408ec54ceec0ff8d466/xpage-lib-3.1.1-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-lib/3.1.1/9516f3243bf1523bac5c2408ec54ceec0ff8d466/xpage-lib-3.1.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-lib/3.1.1/72bdb5d6a1058593c2ecaeaa148308215dc8df25/xpage-lib-3.1.1-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XPage/xpage-lib/3.1.1/72bdb5d6a1058593c2ecaeaa148308215dc8df25/xpage-lib-3.1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

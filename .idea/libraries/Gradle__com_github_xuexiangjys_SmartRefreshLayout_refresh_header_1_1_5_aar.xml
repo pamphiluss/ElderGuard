@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/0667e11c09ad498f9a3c1ce4e9237988/jetified-refresh-header-1.1.5/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.SmartRefreshLayout/refresh-header/1.1.5/3ddb2621594f6ed144ca141a455e85b4c3df8c5e/refresh-header-1.1.5-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.SmartRefreshLayout/refresh-header/1.1.5/3ddb2621594f6ed144ca141a455e85b4c3df8c5e/refresh-header-1.1.5-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.SmartRefreshLayout/refresh-header/1.1.5/9aacc995c29880aa1bbc492c84bc4b00dc283699/refresh-header-1.1.5-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.SmartRefreshLayout/refresh-header/1.1.5/9aacc995c29880aa1bbc492c84bc4b00dc283699/refresh-header-1.1.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

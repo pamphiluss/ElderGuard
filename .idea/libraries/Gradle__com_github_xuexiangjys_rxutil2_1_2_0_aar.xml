@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.xuexiangjys:rxutil2:1.2.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/res" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/2857c4cd45551fef4f02dc0cedc7ec51/jetified-rxutil2-1.2.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/RxUtil2/1.2.0/d09ac9d09d77736be649c717334cb530f001bf35/rxutil2-1.2.0-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/RxUtil2/1.2.0/d09ac9d09d77736be649c717334cb530f001bf35/rxutil2-1.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/RxUtil2/1.2.0/66d66983cbeaf2ba4c393a15652b42a77501d028/rxutil2-1.2.0-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/RxUtil2/1.2.0/66d66983cbeaf2ba4c393a15652b42a77501d028/rxutil2-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

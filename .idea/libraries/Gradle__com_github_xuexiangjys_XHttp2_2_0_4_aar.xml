@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys:XHttp2:2.0.4@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/res" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b03dcbb6975e3a196082a2fa815ae35e/jetified-XHttp2-2.0.4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XHttp2/2.0.4/d5dd825203292e71d8f7d6722061eb6bb525843c/XHttp2-2.0.4-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XHttp2/2.0.4/d5dd825203292e71d8f7d6722061eb6bb525843c/XHttp2-2.0.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XHttp2/2.0.4/893360104950ac174adce677ecdf54c390f98679/XHttp2-2.0.4-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XHttp2/2.0.4/893360104950ac174adce677ecdf54c390f98679/XHttp2-2.0.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

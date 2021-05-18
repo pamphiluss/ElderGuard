@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys:XUI:1.1.6@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/res" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/77c639c69d3a77499d9d8fc294a6577d/jetified-XUI-1.1.6/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUI/1.1.6/8a3209736b9a4f359e8c87f2a35f01554f1c1c46/XUI-1.1.6-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUI/1.1.6/8a3209736b9a4f359e8c87f2a35f01554f1c1c46/XUI-1.1.6-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUI/1.1.6/5745a3db196301ef4da4594f217fa9f233e1024b/XUI-1.1.6-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUI/1.1.6/5745a3db196301ef4da4594f217fa9f233e1024b/XUI-1.1.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

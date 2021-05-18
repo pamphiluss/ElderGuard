@@ -48,13 +48,15 @@
                 </com.xuexiang.xui.widget.textview.supertextview.SuperTextView>
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                    android:id="@+id/userId"
                     style="@style/InfoItem.Account"
                     app:sLeftTextString="账号" />
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                    android:id="@+id/context"
                     style="@style/InfoItem.Account"
                     app:sDividerLineType="none"
-                    app:sLeftTextString="通讯录" />
+                    app:sLeftTextString="白名单" />
 
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView

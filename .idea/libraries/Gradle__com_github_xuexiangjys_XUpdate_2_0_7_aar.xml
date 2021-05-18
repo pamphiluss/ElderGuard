@@ -4,12 +4,17 @@
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/b066b214c3dfb4052f444014c573df8d/jetified-XUpdate-2.0.7/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUpdate/2.0.7/be0fcd0fa8f21aeaf4a6668b3e4938ac9abb8653/XUpdate-2.0.7-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUpdate/2.0.7/be0fcd0fa8f21aeaf4a6668b3e4938ac9abb8653/XUpdate-2.0.7-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUpdate/2.0.7/8b737bd94b4cfd042707bb87f8e250c4dc74ce45/XUpdate-2.0.7-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys/XUpdate/2.0.7/8b737bd94b4cfd042707bb87f8e250c4dc74ce45/XUpdate-2.0.7-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

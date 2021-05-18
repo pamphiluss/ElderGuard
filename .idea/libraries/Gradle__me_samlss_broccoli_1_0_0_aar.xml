@@ -4,12 +4,17 @@
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f2bfeaefebb7f034453d81c5f1e0a1b1/jetified-broccoli-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/me.samlss/broccoli/1.0.0/f7e9a65177ab983ce2ff48ec48d28f859decdfa7/broccoli-1.0.0-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/me.samlss/broccoli/1.0.0/f7e9a65177ab983ce2ff48ec48d28f859decdfa7/broccoli-1.0.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/me.samlss/broccoli/1.0.0/d00a1f895b8925bdcdad336006c53fa40f64bb76/broccoli-1.0.0-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/me.samlss/broccoli/1.0.0/d00a1f895b8925bdcdad336006c53fa40f64bb76/broccoli-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

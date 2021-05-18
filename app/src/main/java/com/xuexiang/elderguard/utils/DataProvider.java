@@ -64,6 +64,7 @@ public class DataProvider {
         }
         return list;
     }
+
     /**
      * 用于占位的空信息
      *
@@ -127,6 +128,7 @@ public class DataProvider {
     public static String getAcqVisitImgUrl(EgAcquaintance egAcquaintance) {
         return getBaseImgUrl() + egAcquaintance.getImage();
     }
+
 
     public static String getUserImgUrl(EgUser egUser) {
         return getBaseImgUrl() + egUser.getImage();

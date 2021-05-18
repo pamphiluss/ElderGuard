@@ -1,6 +1,8 @@
 package com.xuexiang.elderguard.fragment;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gturedi.views.StatefulLayout;
+import com.mylhyl.circledialog.BaseCircleDialog;
+import com.mylhyl.circledialog.CircleDialog;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -31,7 +35,7 @@ import butterknife.BindView;
 import io.reactivex.Observable;
 
 
-@Page(name = "通讯录")
+@Page(name = "白名单")
 public class RelationFragment extends XPageFragment implements SmartViewHolder.OnItemLongClickListener, SmartViewHolder.OnViewItemClickListener, SmartViewHolder.OnItemClickListener {
 
     @BindView(R.id.recyclerView)
@@ -40,7 +44,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
     StatefulLayout mLlStateful;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout mRefreshLayout;
-
+    private BaseCircleDialog dialogFragment;
     private RelationAdapter mRelationAdapter;
 
     @Override
@@ -54,7 +58,32 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
         titleBar.addAction(new TitleBar.TextAction("添加") {
             @Override
             public void performAction(View view) {
+                dialogFragment = new CircleDialog.Builder()
+                        //.setTypeface(typeface)
+                        .setCanceledOnTouchOutside(false)
+                        .setCancelable(true)
+                        .setTitle("添加关系")
+                        .setSubTitle("请输入要添加关系名称")
+                        .setInputHint("请输入关系名称")
+                        .setInputHeight(30)
+//                        .setInputShowKeyboard(true)
+                        .setInputEmoji(true)
+                        .setInputCounter(10)
+//                        .setInputCounter(20, (maxLen, currentLen) -> maxLen - currentLen + "/" + maxLen)
+                        .configInput(params -> {
 
+                            params.styleText = Typeface.BOLD;
+                        })
+                        .setNegative("取消", null)
+                        .setPositiveInput("确定", (text, v) -> {
+                            if (TextUtils.isEmpty(text)) {
+                                v.setError("请输入内容");
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        })
+                        .show(getFragmentManager());
             }
         });
         return titleBar;
@@ -63,7 +92,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
     @Override
     public void onItemClick(View itemView, int position) {
         // TODO:
-        openPageForResult(RelationMeFragment.class, RouterUtils.getBundle("rela", mRelationAdapter.getItem(position)), 1000);
+        openPageForResult(RelationMeFragment.class, RouterUtils.getBundle("relation", mRelationAdapter.getItem(position)), 1000);
     }
 
     @Override

@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mylhyl:circleDialog:5.3.7.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/res" />
+      <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/e56357fc17651a74c195c32cf36adba5/jetified-circleDialog-5.3.7.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.mylhyl/circleDialog/5.3.7.1/d8da3dee500fc5505230edef495ed00d7b610dae/circleDialog-5.3.7.1-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.mylhyl/circleDialog/5.3.7.1/d8da3dee500fc5505230edef495ed00d7b610dae/circleDialog-5.3.7.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.mylhyl/circleDialog/5.3.7.1/9c7118de2693333f42c3c3ac8d8b12a693cec2d2/circleDialog-5.3.7.1-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.mylhyl/circleDialog/5.3.7.1/9c7118de2693333f42c3c3ac8d8b12a693cec2d2/circleDialog-5.3.7.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

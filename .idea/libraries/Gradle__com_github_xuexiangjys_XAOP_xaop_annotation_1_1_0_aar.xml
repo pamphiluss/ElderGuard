@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys.XAOP:xaop-annotation:1.1.0@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/37e718639b0844b5a5ee40b93ee2ec47/jetified-xaop-annotation-1.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XAOP/xaop-annotation/1.1.0/78a443faec1e5274327755f426c9915b35fc23eb/xaop-annotation-1.1.0-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XAOP/xaop-annotation/1.1.0/78a443faec1e5274327755f426c9915b35fc23eb/xaop-annotation-1.1.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XAOP/xaop-annotation/1.1.0/cef3532e19f6496e64cda05345ceab3cbadab5aa/xaop-annotation-1.1.0-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XAOP/xaop-annotation/1.1.0/cef3532e19f6496e64cda05345ceab3cbadab5aa/xaop-annotation-1.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

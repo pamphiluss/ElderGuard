@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys.XRouter:xrouter-runtime:1.0.1@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/79c2e4a33c44aea8b1842effa2b72c29/jetified-xrouter-runtime-1.0.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XRouter/xrouter-runtime/1.0.1/4b8c66f9f1ae3c92db298cd12c222289dd963c42/xrouter-runtime-1.0.1-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XRouter/xrouter-runtime/1.0.1/4b8c66f9f1ae3c92db298cd12c222289dd963c42/xrouter-runtime-1.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XRouter/xrouter-runtime/1.0.1/9502409a06b197cb8b42f46c91a4a39505530c0b/xrouter-runtime-1.0.1-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XRouter/xrouter-runtime/1.0.1/9502409a06b197cb8b42f46c91a4a39505530c0b/xrouter-runtime-1.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

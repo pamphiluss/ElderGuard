@@ -22,11 +22,12 @@ import com.google.android.material.navigation.NavigationView;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
+import com.xuexiang.elderguard.fragment.LoginFragment;
 import com.xuexiang.elderguard.fragment.RelationFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.fragment.Visition.VisitionFragment;
 import com.xuexiang.elderguard.fragment.profile.ProfileFragment;
-import com.xuexiang.elderguard.fragment.relation.LinkageRecyclerViewElemeFragment;
+import com.xuexiang.elderguard.fragment.serviceFragment;
 import com.xuexiang.elderguard.fragment.trending.echarts.EChartsAndroidFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.Utils;
@@ -37,7 +38,6 @@ import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 import com.xuexiang.xutil.XUtil;
-import com.xuexiang.xutil.app.ActivityUtils;
 import com.xuexiang.xutil.common.ClickUtils;
 import com.xuexiang.xutil.common.CollectionUtils;
 import com.xuexiang.xutil.display.Colors;
@@ -164,7 +164,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     case R.id.nav_search:
                         openNewPage(RelationFragment.class);
                         break;
-
+                    case R.id.nav_starred:
+                        openNewPage(serviceFragment.class);
                     default:
                         XToastUtils.toast("点击了:" + menuItem.getTitle());
                         break;

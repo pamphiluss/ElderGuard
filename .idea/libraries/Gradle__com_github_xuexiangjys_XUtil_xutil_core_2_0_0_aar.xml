@@ -2,17 +2,23 @@
   <library name="Gradle: com.github.xuexiangjys.XUtil:xutil-core:2.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/annotations.zip!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/f7276be8b77d751883c2cd4813d49b65/jetified-xutil-core-2.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XUtil/xutil-core/2.0.0/a866e021b498432af672ef89819ea109bac6e472/xutil-core-2.0.0-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XUtil/xutil-core/2.0.0/a866e021b498432af672ef89819ea109bac6e472/xutil-core-2.0.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XUtil/xutil-core/2.0.0/10f2829133c6a928ceca26f038073a7dd88eb45c/xutil-core-2.0.0-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.github.xuexiangjys.XUtil/xutil-core/2.0.0/10f2829133c6a928ceca26f038073a7dd88eb45c/xutil-core-2.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

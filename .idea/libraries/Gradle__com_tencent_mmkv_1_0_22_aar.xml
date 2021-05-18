@@ -4,9 +4,13 @@
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/res" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/906702ff9f3ad531e9f56cf72b86829f/jetified-mmkv-1.0.22/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.tencent/mmkv/1.0.22/ae98dbf3a83a5ad6bac6f9ff94476cf9c75e41f6/mmkv-1.0.22-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.tencent/mmkv/1.0.22/ae98dbf3a83a5ad6bac6f9ff94476cf9c75e41f6/mmkv-1.0.22-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES />
   </library>

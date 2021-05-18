@@ -4,12 +4,17 @@
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/res" />
       <root url="file://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/AndroidManifest.xml" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/jars/classes.jar!/" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/AndroidManifest.xml" />
+      <root url="file://D:/Android_Studio_Temp/.gradle/caches/transforms-2/files-2.1/a6140725a029ed91080e8fdf6b7ba15c/jetified-leakcanary-object-watcher-android-androidx-2.6/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-object-watcher-android-androidx/2.6/79ede440a9096d56747bfd0ef77b7e1cee00a33b/leakcanary-object-watcher-android-androidx-2.6-javadoc.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-object-watcher-android-androidx/2.6/79ede440a9096d56747bfd0ef77b7e1cee00a33b/leakcanary-object-watcher-android-androidx-2.6-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-object-watcher-android-androidx/2.6/cc353dc613555bffd00f34e8a279632c854c63e9/leakcanary-object-watcher-android-androidx-2.6-sources.jar!/" />
+      <root url="jar://D:/Android_Studio_Temp/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-object-watcher-android-androidx/2.6/cc353dc613555bffd00f34e8a279632c854c63e9/leakcanary-object-watcher-android-androidx-2.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

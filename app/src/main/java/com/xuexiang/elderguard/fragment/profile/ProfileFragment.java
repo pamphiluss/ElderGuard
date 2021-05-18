@@ -9,8 +9,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseFragment;
+import com.xuexiang.elderguard.fragment.ChangeUserInfoFragment;
+import com.xuexiang.elderguard.fragment.LoginFragment;
+import com.xuexiang.elderguard.fragment.RelationFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
+import com.xuexiang.elderguard.utils.RouterUtils;
 import com.xuexiang.xaop.annotation.Permission;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xaop.consts.PermissionConsts;
@@ -82,12 +86,20 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
     @Override
     public void onClick(SuperTextView view) {
         switch (view.getId()) {
+            case R.id.context:
+                openNewPage(LoginFragment.class);
+                break;
             case R.id.menu_settings:
                 openNewPage(SettingsFragment.class);
                 break;
             case R.id.mine_pic:
                 selectPicture();
                 uploadPicture();
+                break;
+
+            case R.id.userId:
+                openPageForResult(ChangeUserInfoFragment.class, RouterUtils.getBundle("egUser", TokenManager.getInstance().getLoginUser()), 1000);
+                break;
             default:
                 break;
         }
