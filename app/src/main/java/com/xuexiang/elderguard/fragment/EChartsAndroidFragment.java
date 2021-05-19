@@ -1,4 +1,4 @@
-package com.xuexiang.elderguard.fragment.trending.echarts;
+package com.xuexiang.elderguard.fragment;
 
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -108,7 +108,11 @@ public class EChartsAndroidFragment extends BaseWebViewFragment {
 
             Bar bar = new Bar("上周");
             Bar bar1 = new Bar("本周");
-            bar.data(5, 2, 3, 2, 2, 1);
+            bar.data().add(1);
+            bar.data().add(1);
+            bar.data().add(1);
+            bar.data().add(1);
+            bar.data().add(1);
             bar1.data(7, 2, 5, 2, 4, 3);
             option.series(bar, bar1);
 
