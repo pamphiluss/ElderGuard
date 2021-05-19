@@ -1,6 +1,8 @@
 package com.xuexiang.elderguard.activity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -33,6 +35,7 @@ import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.Utils;
 import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xaop.annotation.SingleClick;
+import com.xuexiang.xpush.notify.NotificationUtils;
 import com.xuexiang.xui.adapter.FragmentAdapter;
 import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
@@ -85,6 +88,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         initViews();
 
         initListeners();
+        if (!NotificationUtils.isNotifyPermissionOpen(this)) {
+            new AlertDialog.Builder(this)
+                    .setCancelable(false)
+                    .setMessage("通知权限未打开，是否前去打开？")
+                    .setPositiveButton("是", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface d, int w) {
+                            NotificationUtils.openNotifyPermissionSetting(MainActivity.this);
+                        }
+                    })
+                    .setNegativeButton("否", null)
+                    .show();
+        }
     }
 
     @Override

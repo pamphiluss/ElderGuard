@@ -52,7 +52,7 @@ import static com.xuexiang.elderguard.utils.DataProvider.getUserImgUrl;
 public class ChangeUserInfoFragment extends XPageFragment {
     private static final int REQUEST_CODE_SELECT_PICTURE = 2000;
 
-    @AutoWired
+    @AutoWired(name = "user")
     EgUser egUser;
     @BindView(R.id.et_user_name)
     EditText mEtUserName;
@@ -100,9 +100,9 @@ public class ChangeUserInfoFragment extends XPageFragment {
 
     @SingleClick
     private void saveUser(View view) {
-        if (checkBook()) {
+        if (checkUser()) {
             mIProgressLoader.updateMessage("保存中...");
-            XHttp.post("/user/changeInfo")
+            XHttp.post("/user/uploadInfo")
                     .upJson(JsonUtil.toJson(egUser))
                     .execute(new ProgressLoadingCallBack<Boolean>(mIProgressLoader) {
                         @Override
@@ -124,15 +124,12 @@ public class ChangeUserInfoFragment extends XPageFragment {
         }
     }
 
-    private boolean checkBook() {
+    private boolean checkUser() {
         if (StringUtils.isEmpty(mEtUserName.getText().toString())) {
             ToastUtils.toast("用户名不能为空！");
             return false;
         } else if (StringUtils.isEmpty(mEtSex.getText().toString())) {
             ToastUtils.toast("性别不能为空！");
-            return false;
-        } else if (StringUtils.isEmpty(mEtMail.getText().toString())) {
-            ToastUtils.toast("邮箱不能为空！");
             return false;
         } else {
             egUser.setUsername(mEtUserName.getText().toString());
@@ -225,7 +222,7 @@ public class ChangeUserInfoFragment extends XPageFragment {
         }
         mIProgressLoader.updateMessage("上传中...");
         if (Utils.isScopedStorageMode() && Utils.isPublicPath(mPicturePath)) {
-            XHttp.post("/user/uploadpic")
+            XHttp.post("/user/uploadUserPicture")
                     .params("userId", egUser.getId())
                     .uploadFile("file", getInputStreamByUri(mPictureUri), FileUtils.getFileByPath(mPicturePath).getName(), new IProgressResponseCallBack() {
                         @Override
@@ -242,8 +239,8 @@ public class ChangeUserInfoFragment extends XPageFragment {
                         }
                     });
         } else {
-            XHttp.post("/book/uploadBookPicture")
-                    .params("bookId", egUser.getId())
+            XHttp.post("/user/uploadUserPicture")
+                    .params("userId", egUser.getId())
                     .uploadFile("file", FileUtils.getFileByPath(mPicturePath), new IProgressResponseCallBack() {
                         @Override
                         public void onResponseProgress(long bytesWritten, long contentLength, boolean done) {

@@ -10,11 +10,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseFragment;
 import com.xuexiang.elderguard.fragment.ChangeUserInfoFragment;
-import com.xuexiang.elderguard.fragment.LoginFragment;
 import com.xuexiang.elderguard.fragment.RelationFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
-import com.xuexiang.elderguard.utils.RouterUtils;
 import com.xuexiang.xaop.annotation.Permission;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xaop.consts.PermissionConsts;
@@ -35,9 +33,13 @@ import static com.xuexiang.elderguard.utils.DataProvider.getUserImgUrl;
 public class ProfileFragment extends BaseFragment implements SuperTextView.OnSuperTextViewClickListener {
     @BindView(R.id.riv_head_pic)
     RadiusImageView rivHeadPic;
-    @BindView(R.id.menu_settings)
+    @BindView(R.id.menu_setting)
     SuperTextView menuSettings;
-    @BindView(R.id.mine_pic)
+    @BindView(R.id.menu_info)
+    SuperTextView menu_Info;
+    @BindView(R.id.menu_context)
+    SuperTextView menu_context;
+    @BindView(R.id.menu_pic)
     SuperTextView minePic;
     private static final int REQUEST_CODE_SELECT_PICTURE = 2000;
 
@@ -78,6 +80,9 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
 
     @Override
     protected void initListeners() {
+        menu_Info.setOnSuperTextViewClickListener(this);
+        menu_context.setOnSuperTextViewClickListener(this);
+        minePic.setOnSuperTextViewClickListener(this);
         menuSettings.setOnSuperTextViewClickListener(this);
 
     }
@@ -86,31 +91,23 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
     @Override
     public void onClick(SuperTextView view) {
         switch (view.getId()) {
-            case R.id.context:
-                openNewPage(LoginFragment.class);
+            case R.id.menu_pic:
+            case R.id.menu_info:
+                openNewPage(ChangeUserInfoFragment.class, "user", TokenManager.getInstance().getLoginUser());
                 break;
-            case R.id.menu_settings:
-                openNewPage(SettingsFragment.class);
-                break;
-            case R.id.mine_pic:
-                selectPicture();
-                uploadPicture();
+            case R.id.menu_context:
+                openNewPage(RelationFragment.class);
                 break;
 
-            case R.id.userId:
-                openPageForResult(ChangeUserInfoFragment.class, RouterUtils.getBundle("egUser", TokenManager.getInstance().getLoginUser()), 1000);
+            case R.id.menu_setting:
+                openNewPage(SettingsFragment.class);
                 break;
             default:
                 break;
         }
     }
 
-    @Permission(PermissionConsts.STORAGE)
-    private void selectPicture() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        startActivityForResult(intent, REQUEST_CODE_SELECT_PICTURE);
-    }
+
 
     @SuppressLint("MissingPermission")
     @Override
@@ -129,9 +126,4 @@ public class ProfileFragment extends BaseFragment implements SuperTextView.OnSup
         }
     }
 
-    @SuppressLint("CheckResult")
-    @Permission(PermissionConsts.STORAGE)
-    private void uploadPicture() {
-
-    }
 }

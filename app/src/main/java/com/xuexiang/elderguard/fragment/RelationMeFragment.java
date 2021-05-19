@@ -1,6 +1,7 @@
 package com.xuexiang.elderguard.fragment;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -92,7 +93,11 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
         titleBar.addAction(new TitleBar.TextAction("添加") {
             @Override
             public void performAction(View view) {
-                openPage(AddAcqInfoFragment.class);
+                Bundle bundle = new Bundle();
+                String KEY_PARAM_MSG = "key_param_msg";
+                bundle.putInt(KEY_PARAM_MSG, relation.getRelationid());
+                openPage(AddAcqInfoFragment.class, bundle);
+
             }
         });
         return titleBar;

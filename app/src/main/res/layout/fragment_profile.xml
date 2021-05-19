@@ -31,7 +31,7 @@
                 android:paddingTop="20dp">
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/mine_pic"
+                    android:id="@+id/menu_pic"
                     style="@style/InfoItem.Account"
                     android:layout_height="60dp"
                     app:sLeftTextString="头像">
@@ -48,19 +48,20 @@
                 </com.xuexiang.xui.widget.textview.supertextview.SuperTextView>
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/userId"
+                    android:id="@+id/menu_info"
                     style="@style/InfoItem.Account"
+                    android:layout_marginTop="20dp"
                     app:sLeftTextString="账号" />
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/context"
+                    android:id="@+id/menu_context"
                     style="@style/InfoItem.Account"
-                    app:sDividerLineType="none"
+                    android:layout_marginTop="20dp"
                     app:sLeftTextString="白名单" />
 
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_settings"
+                    android:id="@+id/menu_setting"
                     style="@style/InfoItem.Account"
                     android:layout_marginTop="20dp"
                     app:sLeftTextString="设置" />

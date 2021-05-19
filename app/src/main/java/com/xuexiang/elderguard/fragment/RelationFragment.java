@@ -2,6 +2,7 @@ package com.xuexiang.elderguard.fragment;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -18,16 +19,22 @@ import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.xuexiang.elderguard.R;
+import com.xuexiang.elderguard.activity.LoginActivity;
 import com.xuexiang.elderguard.adapter.base.RelationAdapter;
 import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.entity.EgRelationship;
+import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.RouterUtils;
+import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xhttp2.exception.ApiException;
 import com.xuexiang.xhttp2.utils.TypeUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
+import com.xuexiang.xutil.app.ActivityUtils;
+import com.xuexiang.xutil.common.StringUtils;
+import com.xuexiang.xutil.tip.ToastUtils;
 
 import java.util.List;
 
@@ -58,6 +65,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
         titleBar.addAction(new TitleBar.TextAction("添加") {
             @Override
             public void performAction(View view) {
+                assert getFragmentManager() != null;
                 dialogFragment = new CircleDialog.Builder()
                         //.setTypeface(typeface)
                         .setCanceledOnTouchOutside(false)
@@ -80,6 +88,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
                                 v.setError("请输入内容");
                                 return false;
                             } else {
+                                uploadRelation(text, TokenManager.getInstance().getLoginUser().getId());
                                 return true;
                             }
                         })
@@ -89,9 +98,42 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
         return titleBar;
     }
 
+    @SuppressLint("CheckResult")
+    public void uploadRelation(String text, int id){
+        if (StringUtils.isEmpty(text)) {
+            ToastUtils.toast("关系名不能为空！");
+            return;
+        }
+        Observable<Boolean> observable = XHttp.post("/relation/addRelation")
+                .params("relation", text)
+                .params("userId", id)
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response != null) {
+                    XToastUtils.info("添加成功");
+
+                } else {
+                    XToastUtils.info("添加失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
+            }
+        });
+    }
+
     @Override
     public void onItemClick(View itemView, int position) {
         // TODO:
+
         openPageForResult(RelationMeFragment.class, RouterUtils.getBundle("relation", mRelationAdapter.getItem(position)), 1000);
     }
 

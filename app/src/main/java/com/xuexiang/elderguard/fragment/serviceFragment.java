@@ -1,6 +1,7 @@
 
 package com.xuexiang.elderguard.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -10,10 +11,21 @@ import android.text.TextUtils;
 import com.mylhyl.circledialog.BaseCircleDialog;
 import com.mylhyl.circledialog.CircleDialog;
 import com.xuexiang.elderguard.adapter.base.CheckedAdapter;
+import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
+import com.xuexiang.elderguard.manager.TokenManager;
+import com.xuexiang.elderguard.utils.XToastUtils;
+import com.xuexiang.xhttp2.XHttp;
+import com.xuexiang.xhttp2.exception.ApiException;
+import com.xuexiang.xhttp2.utils.TypeUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageSimpleListFragment;
+import com.xuexiang.xutil.common.StringUtils;
+import com.xuexiang.xutil.tip.ToastUtils;
 
 import java.util.List;
+import java.util.Objects;
+
+import io.reactivex.Observable;
 
 
 @Page(name = "快捷服务")
@@ -43,7 +55,7 @@ public class serviceFragment extends XPageSimpleListFragment {
                         .setInputHeight(30)
 //                        .setInputShowKeyboard(true)
                         .setInputEmoji(true)
-                        .setInputCounter(10)
+                        .setInputCounter(30)
 //                        .setInputCounter(20, (maxLen, currentLen) -> maxLen - currentLen + "/" + maxLen)
                         .configInput(params -> {
 
@@ -55,12 +67,14 @@ public class serviceFragment extends XPageSimpleListFragment {
                                 v.setError("请输入内容");
                                 return false;
                             } else {
+                                addPhone(text, TokenManager.getInstance().getLoginUser().getId());
                                 return true;
                             }
                         })
                         .show(getFragmentManager());
                 break;
             case 1:
+                assert getFragmentManager() != null;
                 dialogFragment = new CircleDialog.Builder()
                         //.setTypeface(typeface)
                         .setCanceledOnTouchOutside(false)
@@ -71,7 +85,7 @@ public class serviceFragment extends XPageSimpleListFragment {
                         .setInputHeight(30)
 //                        .setInputShowKeyboard(true)
                         .setInputEmoji(true)
-                        .setInputCounter(10)
+                        .setInputCounter(30)
 //                        .setInputCounter(20, (maxLen, currentLen) -> maxLen - currentLen + "/" + maxLen)
                         .configInput(params -> {
 
@@ -83,62 +97,164 @@ public class serviceFragment extends XPageSimpleListFragment {
                                 v.setError("请输入内容");
                                 return false;
                             } else {
+                                addMail(text, TokenManager.getInstance().getLoginUser().getId());
                                 return true;
                             }
                         })
                         .show(getFragmentManager());
                 break;
             case 2:
-                final String[] objectsR = {"13365156108", "17606107109", "13366786577"};
-                final CheckedAdapter checkedAdapterR = new CheckedAdapter(getContext(), objectsR, true);
+                Observable<List<String>> observable = XHttp.get("/phone/getPhoneById")
+                        .params("userId", TokenManager.getInstance().getLoginUser().getId())
+                        .syncRequest(false)
+                        .onMainThread(true)
+                        .execute(TypeUtils.getListType(String.class));
 
-                new CircleDialog.Builder()
-                        // .setTypeface(typeface)
-                        .setMaxHeight(0.5f)
-                        .configDialog(params -> params.backgroundColorPress = Color.CYAN)
-                        .setTitle("号码列表")
-                        .setSubTitle("单选")
-                        .configItems(params -> params.bottomMargin = 12)
-                        .setItems(checkedAdapterR, (parent, view15, position15, id) -> {
-                            checkedAdapterR.toggle(position15, objectsR[position15]);
-                            return false;
-                        })
-                        .setPositive("确定", v -> {
-                            String phoneNumber = checkedAdapterR.getSaveChecked().toString();
-                            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                        })
-                        .show(getFragmentManager());
+                observable.subscribeWith(new TipRequestSubscriber<List<String>>() {
+                    @Override
+                    protected void onSuccess(List<String> response) {
+                        final String[] objectsM = response.toArray(new String[response.size()]);
+                        final CheckedAdapter checkedAdapterR = new CheckedAdapter(Objects.requireNonNull(getContext()), objectsM, true);
+
+                        assert getFragmentManager() != null;
+                        new CircleDialog.Builder()
+                                // .setTypeface(typeface)
+                                .setMaxHeight(0.5f)
+                                .configDialog(params -> params.backgroundColorPress = Color.CYAN)
+                                .setTitle("号码列表")
+                                .setSubTitle("单选")
+                                .configItems(params -> params.bottomMargin = 12)
+                                .setItems(checkedAdapterR, (parent, view15, position15, id) -> {
+                                    checkedAdapterR.toggle(position15, objectsM[position15]);
+                                    return false;
+                                })
+                                .setPositive("确定", v -> {
+                                    String phoneNumber = checkedAdapterR.getSaveChecked().toString();
+                                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                })
+                                .show(getFragmentManager());
+                    }
+
+                    @Override
+                    public void onError(ApiException e) {
+                        ToastUtils.toast("获取错误");
+                    }
+                });
                 break;
             case 3:
-                final String[] objectsM = {"1349619363@qq.com", "1349619360@qq.com", "mlcc8143@126.com"};
-                final CheckedAdapter checkedAdapterM = new CheckedAdapter(getContext(), objectsM, true);
+                Observable<List<String>> observables = XHttp.get("/mail/getMailById")
+                        .params("userId", TokenManager.getInstance().getLoginUser().getId())
+                        .syncRequest(false)
+                        .onMainThread(true)
+                        .execute(TypeUtils.getListType(String.class));
 
-                new CircleDialog.Builder()
-                        // .setTypeface(typeface)
-                        .setMaxHeight(0.5f)
-                        .configDialog(params -> params.backgroundColorPress = Color.CYAN)
-                        .setTitle("号码列表")
-                        .setSubTitle("单选")
-                        .configItems(params -> params.bottomMargin = 12)
-                        .setItems(checkedAdapterM, (parent, view15, position15, id) -> {
-                            checkedAdapterM.toggle(position15, objectsM[position15]);
-                            return false;
-                        })
-                        .setPositive("确定", v -> {
-                            String emailNumber = checkedAdapterM.getSaveChecked().toString();
-                            Uri uri = Uri.parse("mailto:" + emailNumber.substring(3, emailNumber.length() - 1));
-                            Intent data = new Intent(Intent.ACTION_SENDTO);
-                            data.setData(uri);
-                            data.putExtra(Intent.EXTRA_SUBJECT, "老人卫士");
-                            data.putExtra(Intent.EXTRA_TEXT, "求救！！！");
-                            startActivity(Intent.createChooser(data, "请选择邮件类应用"));
-                        })
-                        .show(getFragmentManager());
+                observables.subscribeWith(new TipRequestSubscriber<List<String>>() {
+                    @Override
+                    protected void onSuccess(List<String> response) {
+                        final String[] objectsM = response.toArray(new String[response.size()]);
+                        final CheckedAdapter checkedAdapterM = new CheckedAdapter(Objects.requireNonNull(getContext()), objectsM, true);
+
+                        assert getFragmentManager() != null;
+                        new CircleDialog.Builder()
+                                // .setTypeface(typeface)
+                                .setMaxHeight(0.5f)
+                                .configDialog(params -> params.backgroundColorPress = Color.CYAN)
+                                .setTitle("邮件列表")
+                                .setSubTitle("单选")
+                                .configItems(params -> params.bottomMargin = 12)
+                                .setItems(checkedAdapterM, (parent, view15, position15, id) -> {
+                                    checkedAdapterM.toggle(position15, objectsM[position15]);
+                                    return false;
+                                })
+                                .setPositive("确定", v -> {
+                                    String emailNumber = checkedAdapterM.getSaveChecked().toString();
+                                    Uri uri = Uri.parse("mailto:" + emailNumber.substring(3, emailNumber.length() - 1));
+                                    Intent data = new Intent(Intent.ACTION_SENDTO);
+                                    data.setData(uri);
+                                    data.putExtra(Intent.EXTRA_SUBJECT, "老人卫士");
+                                    data.putExtra(Intent.EXTRA_TEXT, "求救！！！");
+                                    startActivity(Intent.createChooser(data, "请选择邮件类应用"));
+                                })
+                                .show(getFragmentManager());
+                    }
+
+                    @Override
+                    public void onError(ApiException e) {
+                        ToastUtils.toast("获取错误");
+                    }
+                });
                 break;
             default:
                 break;
         }
     }
+
+    @SuppressLint("CheckResult")
+    public void addPhone(String text, int id) {
+        if (StringUtils.isEmpty(text)) {
+            ToastUtils.toast("手机号不能为空！");
+            return;
+        }
+        Observable<Boolean> observable = XHttp.post("/phone/addPhone")
+                .params("phone", text)
+                .params("userId", id)
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response != null) {
+                    XToastUtils.info("添加成功");
+
+                } else {
+                    XToastUtils.info("添加失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
+            }
+        });
+    }
+
+
+    @SuppressLint("CheckResult")
+    public void addMail(String text, int id) {
+        if (StringUtils.isEmpty(text)) {
+            ToastUtils.toast("邮箱不能为空！");
+            return;
+        }
+        Observable<Boolean> observable = XHttp.post("/mail/addMail")
+                .params("mail", text)
+                .params("userId", id)
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response != null) {
+                    XToastUtils.info("添加成功");
+
+                } else {
+                    XToastUtils.info("添加失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
+            }
+        });
+    }
+
+
 }

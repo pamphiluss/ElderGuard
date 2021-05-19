@@ -7,14 +7,20 @@ import android.graphics.Color;
 import android.view.View;
 
 import com.xuexiang.elderguard.R;
+import com.xuexiang.elderguard.activity.LoginActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
+import com.xuexiang.elderguard.core.http.api.ApiService;
+import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.core.webview.AgentWebActivity;
-import com.xuexiang.elderguard.entity.EgUser;
 import com.xuexiang.elderguard.entity.LoginInfo;
 import com.xuexiang.elderguard.utils.SettingUtils;
 import com.xuexiang.elderguard.utils.Utils;
+import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xaop.annotation.SingleClick;
-import com.xuexiang.xhttp2.subsciber.ProgressDialogLoader;
+import com.xuexiang.xhttp2.XHttp;
+import com.xuexiang.xhttp2.XHttpProxy;
+import com.xuexiang.xhttp2.exception.ApiException;
+import com.xuexiang.xhttp2.subsciber.ProgressLoadingSubscriber;
 import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
@@ -22,18 +28,19 @@ import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText;
+import com.xuexiang.xutil.app.ActivityUtils;
+import com.xuexiang.xutil.common.StringUtils;
+import com.xuexiang.xutil.tip.ToastUtils;
 
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observable;
 
 import static com.xuexiang.elderguard.core.webview.AgentWebFragment.KEY_URL;
 
 
-/**
- * 登录页面
- */
 @Page(anim = CoreAnim.none)
 public class ForgetPasswordFragment extends BaseFragment {
 
@@ -61,12 +68,6 @@ public class ForgetPasswordFragment extends BaseFragment {
         titleBar.setTitle("");
         titleBar.setLeftImageDrawable(ResUtils.getVectorDrawable(getContext(), R.drawable.ic_login_close));
         titleBar.setActionTextColor(ThemeUtils.resolveColor(Objects.requireNonNull(getContext()), R.attr.colorAccent));
-        titleBar.addAction(new TitleBar.TextAction(R.string.title_jump_login) {
-            @Override
-            public void performAction(View view) {
-                onLoginSuccess(new LoginInfo().setEgUser(new EgUser()));
-            }
-        });
         return titleBar;
     }
 
@@ -80,7 +81,6 @@ public class ForgetPasswordFragment extends BaseFragment {
                 SettingUtils.setIsAgreePrivacy(true);
             });
         }
-        mIProgressLoader = new ProgressDialogLoader(getContext(), "登录中...");
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -90,7 +90,11 @@ public class ForgetPasswordFragment extends BaseFragment {
         Intent intent = new Intent(getContext(), AgentWebActivity.class);
         switch (view.getId()) {
             case R.id.btn_fg:
-                // TODO: 修改密码逻辑
+                if (etPhoneNumberFg.validate()) {
+                    if (etPasswordFg.validate()) {
+                        judgeCorrect(etPhoneNumberFg.getEditValue(), etPasswordFg.getEditValue());
+                    }
+                }
                 break;
             case R.id.tv_user_protocol:
                 intent.putExtra(KEY_URL, "file:///android_asset/agreement.html");
@@ -106,16 +110,73 @@ public class ForgetPasswordFragment extends BaseFragment {
     }
 
 
-    /**
-     * 注册成功的处理
-     */
-    private void onLoginSuccess(LoginInfo loginInfo) {
-        // TODO:修改密码成功
-    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+    @SuppressLint("CheckResult")
+
+    private void judgeCorrect(String phone, String password) {
+        if (StringUtils.isEmpty(phone)) {
+            ToastUtils.toast("用户名不能为空！");
+        } else if (StringUtils.isEmpty(password)) {
+            ToastUtils.toast("密码不能为空！");
+        }
+        final boolean[] flag = {false};
+        XHttpProxy.proxy(ApiService.IAuthorization.class)
+                .login(phone, password)
+                .subscribeWith(new ProgressLoadingSubscriber<LoginInfo>(mIProgressLoader) {
+
+                    @Override
+                    protected void onSuccess(LoginInfo loginInfo) {
+                        flag[0] = loginInfo.getEgUser() != null;
+                        if (flag[0] && etPasswordFgAg.validate()) {
+                            updateUser(etPhoneNumberFg.getEditValue(), etPasswordFgAg.getEditValue());
+                            ActivityUtils.startActivity(LoginActivity.class);
+                        } else XToastUtils.info("密码或者账号错误");
+                    }
+
+                    @Override
+                    public void onError(ApiException e) {
+                        ToastUtils.toast("访问错误");
+                    }
+                });
+    }
+
+    @SuppressLint("CheckResult")
+    private void updateUser(String phone, String password) {
+        if (StringUtils.isEmpty(phone)) {
+            ToastUtils.toast("用户名不能为空！");
+        } else if (StringUtils.isEmpty(password)) {
+            ToastUtils.toast("密码不能为空！");
+        }
+        Observable<Boolean> observable = XHttp.post("/user/changerUserPassword")
+                .params("phone", phone)
+                .params("password", password)
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response) {
+                    XToastUtils.info("更改成功");
+                    ActivityUtils.startActivity(LoginActivity.class);
+
+                } else {
+                    XToastUtils.info("更改失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
+            }
+        });
+
     }
 }
 

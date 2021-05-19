@@ -1,16 +1,17 @@
 package com.xuexiang.elderguard.fragment;
 
 import com.xuexiang.elderguard.R;
+import com.xuexiang.elderguard.activity.ShowPushInfoActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
 import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.RouterUtils;
 import com.xuexiang.elderguard.utils.TokenUtils;
-import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xui.widget.dialog.DialogLoader;
 import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 import com.xuexiang.xutil.XUtil;
+import com.xuexiang.xutil.app.ActivityUtils;
 
 import butterknife.BindView;
 
@@ -23,10 +24,6 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
     SuperTextView menuPrivacy;
     @BindView(R.id.menu_push)
     SuperTextView menuPush;
-    @BindView(R.id.menu_helper)
-    SuperTextView menuHelper;
-    @BindView(R.id.menu_change_account)
-    SuperTextView menuChangeAccount;
     @BindView(R.id.menu_logout)
     SuperTextView menuLogout;
 
@@ -40,8 +37,6 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
         menuCommon.setOnSuperTextViewClickListener(this);
         menuPrivacy.setOnSuperTextViewClickListener(this);
         menuPush.setOnSuperTextViewClickListener(this);
-        menuHelper.setOnSuperTextViewClickListener(this);
-        menuChangeAccount.setOnSuperTextViewClickListener(this);
         menuLogout.setOnSuperTextViewClickListener(this);
     }
 
@@ -53,12 +48,10 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
                 openPageForResult(ChangeUserInfoFragment.class, RouterUtils.getBundle("egUser", TokenManager.getInstance().getLoginUser()), 1000);
                 break;
             case R.id.menu_privacy:
-            case R.id.menu_push:
-            case R.id.menu_helper:
-                XToastUtils.toast(superTextView.getLeftString());
+                ActivityUtils.startActivity(ShowPushInfoActivity.class);
                 break;
-            case R.id.menu_change_account:
-                XToastUtils.toast(superTextView.getCenterString());
+            case R.id.menu_push:
+                openPage(OperationFragment.class);
                 break;
             case R.id.menu_logout:
                 DialogLoader.getInstance().showConfirmDialog(

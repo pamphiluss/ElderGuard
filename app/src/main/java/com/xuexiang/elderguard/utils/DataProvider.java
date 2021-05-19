@@ -6,7 +6,6 @@ import com.xuexiang.elderguard.entity.EgRelationship;
 import com.xuexiang.elderguard.entity.EgStranger;
 import com.xuexiang.elderguard.entity.EgUser;
 import com.xuexiang.elderguard.entity.EgVisit;
-import com.xuexiang.elderguard.fragment.relation.eleme.ElemeGroupedItem;
 import com.xuexiang.xaop.annotation.MemoryCache;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
@@ -18,11 +17,7 @@ import java.util.List;
 
 
 public class DataProvider {
-    @MemoryCache
-    public static List<ElemeGroupedItem> getElemeGroupItems() {
-        return JsonUtil.fromJson(ResourceUtils.readStringFromAssert("eleme.json"), new TypeToken<List<ElemeGroupedItem>>() {
-        }.getType());
-    }
+
 
     public static String[] titles = new String[]{
             "如今老龄化不断加剧",
@@ -134,6 +129,12 @@ public class DataProvider {
         return getBaseImgUrl() + egUser.getImage();
     }
 
+    public static String getStrImgUrl(EgStranger egStranger) {
+        return getBaseImgUrl() + egStranger.getImage();
+    }
+    public static String getViImgUrl(EgVisit egVisit) {
+        return getBaseImgUrl() + egVisit.getImage();
+    }
     public static String getVisitImgUrlWithoutBaseUrl(EgVisit egVisit) {
         return "/file/downloadFile/" + egVisit.getImage();
     }

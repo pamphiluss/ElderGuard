@@ -161,6 +161,9 @@
     <orderEntry type="library" name="Gradle: com.kunminx.linkage:linkage-recyclerview:1.9.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.PhilJay:MPAndroidChart:v3.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.mylhyl:circleDialog:5.3.7.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.xuexiangjys.XPush:xpush-core:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.xuexiangjys.XPush:keeplive:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.xuexiangjys.XPush:xpush-jpush:1.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.xuexiangjys.XAOP:xaop-runtime:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.xuexiangjys.XAOP:xaop-annotation:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.xuexiangjys:XUpdate:2.0.7@aar" level="project" />

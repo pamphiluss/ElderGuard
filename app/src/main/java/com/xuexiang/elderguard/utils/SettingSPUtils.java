@@ -43,4 +43,17 @@ public class SettingSPUtils extends BaseSPUtil {
     public boolean setApiURL(String apiUrl) {
         return putString(getString(R.string.service_api_key), apiUrl);
     }
+
+
+    private final String KEY_SELECT_PUSH_PLATFORM = "key_select_push_platform";
+
+
+    public int getPushPlatformCode() {
+        return getInt(KEY_SELECT_PUSH_PLATFORM, 0);
+    }
+
+    public void setPushPlatformCode(int platformCode) {
+        putInt(KEY_SELECT_PUSH_PLATFORM, platformCode);
+    }
+
 }

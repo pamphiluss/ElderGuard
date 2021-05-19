@@ -34,30 +34,17 @@
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                     android:id="@+id/menu_common"
                     style="@style/InfoItem.Account"
-                    app:sLeftTextString="通用" />
+                    app:sLeftTextString="通用测试" />
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                     android:id="@+id/menu_privacy"
                     style="@style/InfoItem.Account"
-                    app:sLeftTextString="隐私" />
+                    app:sLeftTextString="推送展示测试" />
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                     android:id="@+id/menu_push"
                     style="@style/InfoItem.Account"
-                    app:sLeftTextString="推送" />
-
-                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_helper"
-                    style="@style/InfoItem.Account"
-                    app:sDividerLineType="none"
-                    app:sLeftTextString="帮助" />
-
-                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_change_account"
-                    style="@style/InfoItem"
-                    android:layout_marginTop="16dp"
-                    app:sCenterTextString="切换账号"
-                    app:sDividerLineType="none" />
+                    app:sLeftTextString="推送设置测试" />
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                     android:id="@+id/menu_logout"

@@ -28,6 +28,7 @@ import com.xuexiang.xhttp2.subsciber.ProgressLoadingSubscriber;
 import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
+import com.xuexiang.xpush.XPush;
 import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
@@ -148,6 +149,7 @@ public class LoginFragment extends BaseFragment {
                         TokenManager.getInstance()
                                 .setToken(loginInfo.getToken())
                                 .setLoginUser(loginInfo.getEgUser());
+                        XPush.bindAlias(loginInfo.getEgUser().getId().toString());
                         onLoginSuccess(loginInfo);
                     }
 
@@ -166,7 +168,7 @@ public class LoginFragment extends BaseFragment {
      */
     private void onLoginSuccess(LoginInfo loginInfo) {
         String token = RandomUtils.getRandomNumbersAndLetters(16);
-        if (TokenUtils.handleLoginSuccess(token,loginInfo)) {
+        if (TokenUtils.handleLoginSuccess(token, loginInfo)) {
             popToBack();
             ActivityUtils.startActivity(MainActivity.class);
         }

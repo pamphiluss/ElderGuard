@@ -66,5 +66,20 @@
       <option name="name" value="MavenLocal" />
       <option name="url" value="file:/D:/ProgrammingSoftware/MavenLib/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="file:/$PROJECT_DIR$/xpush-jpush/LocalRepository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="file:/$PROJECT_DIR$/xpush-core/LocalRepository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="file:/$PROJECT_DIR$/keeplive/LocalRepository" />
+    </remote-repository>
   </component>
 </project>
