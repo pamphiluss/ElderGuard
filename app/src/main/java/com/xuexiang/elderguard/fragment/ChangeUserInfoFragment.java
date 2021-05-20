@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.xuexiang.elderguard.R;
+import com.xuexiang.elderguard.activity.MainActivity;
 import com.xuexiang.elderguard.entity.EgUser;
+import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.rxutil2.lifecycle.RxLifecycle;
 import com.xuexiang.xaop.annotation.Permission;
 import com.xuexiang.xaop.annotation.SingleClick;
@@ -28,9 +30,9 @@ import com.xuexiang.xhttp2.utils.Utils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
-import com.xuexiang.xrouter.annotation.AutoWired;
 import com.xuexiang.xrouter.launcher.XRouter;
 import com.xuexiang.xutil.XUtil;
+import com.xuexiang.xutil.app.ActivityUtils;
 import com.xuexiang.xutil.app.PathUtils;
 import com.xuexiang.xutil.common.StringUtils;
 import com.xuexiang.xutil.display.HProgressDialogUtils;
@@ -52,7 +54,7 @@ import static com.xuexiang.elderguard.utils.DataProvider.getUserImgUrl;
 public class ChangeUserInfoFragment extends XPageFragment {
     private static final int REQUEST_CODE_SELECT_PICTURE = 2000;
 
-    @AutoWired(name = "user")
+
     EgUser egUser;
     @BindView(R.id.et_user_name)
     EditText mEtUserName;
@@ -110,6 +112,8 @@ public class ChangeUserInfoFragment extends XPageFragment {
                             if (response) {
                                 mIsEditSuccess = true;
                                 ToastUtils.toast("保存成功！");
+                                TokenManager.getInstance().setLoginUser(egUser);
+                                ActivityUtils.startActivity(MainActivity.class);
                             } else {
                                 ToastUtils.toast("保存失败！");
                             }
@@ -147,6 +151,7 @@ public class ChangeUserInfoFragment extends XPageFragment {
 
     @Override
     protected void initViews() {
+        egUser = TokenManager.getInstance().getLoginUser();
         mIProgressLoader = new ProgressDialogLoader(getContext());
 
         mEtUserName.setText(StringUtils.getString(egUser.getUsername()));
@@ -235,6 +240,7 @@ public class ChangeUserInfoFragment extends XPageFragment {
                         @Override
                         public void onSuccess(Boolean aBoolean) {
                             mIsEditSuccess = true;
+                            egUser.setImage(FileUtils.getFileByPath(mPicturePath).getName());
                             ToastUtils.toast("图片上传" + (aBoolean ? "成功" : "失败") + "！");
                         }
                     });
@@ -252,6 +258,7 @@ public class ChangeUserInfoFragment extends XPageFragment {
                         @Override
                         public void onSuccess(Boolean aBoolean) {
                             mIsEditSuccess = true;
+                            egUser.setImage(FileUtils.getFileByPath(mPicturePath).getName());
                             ToastUtils.toast("图片上传" + (aBoolean ? "成功" : "失败") + "！");
                         }
                     });

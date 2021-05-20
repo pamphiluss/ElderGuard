@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.xuexiang.elderguard.R;
 import com.xuexiang.elderguard.core.BaseActivity;
 import com.xuexiang.elderguard.core.BaseFragment;
+import com.xuexiang.elderguard.fragment.ChangeUserInfoFragment;
 import com.xuexiang.elderguard.fragment.RelationFragment;
 import com.xuexiang.elderguard.fragment.SettingsFragment;
 import com.xuexiang.elderguard.fragment.Visition.VisitionFragment;
@@ -237,6 +238,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.nav_header:
+                openNewPage(ChangeUserInfoFragment.class);
                 XToastUtils.toast("点击头部！");
                 break;
             default:

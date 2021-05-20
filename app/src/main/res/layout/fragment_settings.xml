@@ -32,21 +32,6 @@
                 android:paddingTop="20dp">
 
                 <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_common"
-                    style="@style/InfoItem.Account"
-                    app:sLeftTextString="通用测试" />
-
-                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_privacy"
-                    style="@style/InfoItem.Account"
-                    app:sLeftTextString="推送展示测试" />
-
-                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
-                    android:id="@+id/menu_push"
-                    style="@style/InfoItem.Account"
-                    app:sLeftTextString="推送设置测试" />
-
-                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
                     android:id="@+id/menu_logout"
                     style="@style/InfoItem"
                     android:layout_marginTop="16dp"

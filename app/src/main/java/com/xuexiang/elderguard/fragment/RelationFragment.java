@@ -2,7 +2,6 @@ package com.xuexiang.elderguard.fragment;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -19,7 +18,6 @@ import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.xuexiang.elderguard.R;
-import com.xuexiang.elderguard.activity.LoginActivity;
 import com.xuexiang.elderguard.adapter.base.RelationAdapter;
 import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.entity.EgRelationship;
@@ -32,7 +30,6 @@ import com.xuexiang.xhttp2.utils.TypeUtils;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
-import com.xuexiang.xutil.app.ActivityUtils;
 import com.xuexiang.xutil.common.StringUtils;
 import com.xuexiang.xutil.tip.ToastUtils;
 
@@ -59,7 +56,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
         TitleBar titleBar = super.initTitleBar().setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                popToBack();
             }
         });
         titleBar.addAction(new TitleBar.TextAction("添加") {
@@ -99,7 +96,7 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
     }
 
     @SuppressLint("CheckResult")
-    public void uploadRelation(String text, int id){
+    public void uploadRelation(String text, int id) {
         if (StringUtils.isEmpty(text)) {
             ToastUtils.toast("关系名不能为空！");
             return;
@@ -139,7 +136,46 @@ public class RelationFragment extends XPageFragment implements SmartViewHolder.O
 
     @Override
     public void onItemLongClick(View itemView, int position) {
+        dialogFragment = new CircleDialog.Builder()
+                //.setTypeface(typeface)
+                .setCanceledOnTouchOutside(false)
+                .setCancelable(true)
+                .setTitle("删除")
+                .setSubTitle("是否删除当前关系")
+                .setNegative("取消", null)
+                .setPositive("确定", v -> {
+                    deleteRelation(mRelationAdapter.getItem(position));
+                    mRefreshLayout.autoRefresh();
 
+                })
+                .show(getFragmentManager());
+    }
+
+    @SuppressLint("CheckResult")
+    public void deleteRelation(EgRelationship egRelationship) {
+        Observable<Boolean> observable = XHttp.post("/relation/deleteRelation")
+                .params("relation", egRelationship.getRelationid())
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response != null) {
+                    XToastUtils.info("删除成功");
+
+                } else {
+                    XToastUtils.info("删除失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
+            }
+        });
     }
 
     @Override

@@ -18,12 +18,6 @@ import butterknife.BindView;
 @Page(name = "设置")
 public class SettingsFragment extends BaseFragment implements SuperTextView.OnSuperTextViewClickListener {
 
-    @BindView(R.id.menu_common)
-    SuperTextView menuCommon;
-    @BindView(R.id.menu_privacy)
-    SuperTextView menuPrivacy;
-    @BindView(R.id.menu_push)
-    SuperTextView menuPush;
     @BindView(R.id.menu_logout)
     SuperTextView menuLogout;
 
@@ -34,9 +28,6 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
 
     @Override
     protected void initViews() {
-        menuCommon.setOnSuperTextViewClickListener(this);
-        menuPrivacy.setOnSuperTextViewClickListener(this);
-        menuPush.setOnSuperTextViewClickListener(this);
         menuLogout.setOnSuperTextViewClickListener(this);
     }
 
@@ -44,15 +35,6 @@ public class SettingsFragment extends BaseFragment implements SuperTextView.OnSu
     @Override
     public void onClick(SuperTextView superTextView) {
         switch (superTextView.getId()) {
-            case R.id.menu_common:
-                openPageForResult(ChangeUserInfoFragment.class, RouterUtils.getBundle("egUser", TokenManager.getInstance().getLoginUser()), 1000);
-                break;
-            case R.id.menu_privacy:
-                ActivityUtils.startActivity(ShowPushInfoActivity.class);
-                break;
-            case R.id.menu_push:
-                openPage(OperationFragment.class);
-                break;
             case R.id.menu_logout:
                 DialogLoader.getInstance().showConfirmDialog(
                         getContext(),

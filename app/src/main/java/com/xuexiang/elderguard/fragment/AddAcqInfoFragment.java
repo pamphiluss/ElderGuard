@@ -99,6 +99,7 @@ public class AddAcqInfoFragment extends XPageFragment {
             @Override
             public void performAction(View view) {
                 saveAcq(view);
+                popToBack();
             }
         });
         return titleBar;

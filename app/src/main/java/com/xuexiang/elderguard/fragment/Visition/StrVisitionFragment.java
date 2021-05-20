@@ -34,6 +34,7 @@ import com.xuexiang.elderguard.adapter.base.delegate.SimpleDelegateAdapter;
 import com.xuexiang.elderguard.core.BaseFragment;
 import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.entity.EgStranger;
+import com.xuexiang.elderguard.manager.TokenManager;
 import com.xuexiang.elderguard.utils.DataProvider;
 import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xhttp2.XHttp;
@@ -144,7 +145,11 @@ public class StrVisitionFragment extends BaseFragment {
 
     @SuppressLint("CheckResult")
     private void getVisitList() {
+        if (TokenManager.getInstance().getLoginUser() == null) {
+            egStrangers = null;
+        }
         Observable<List<EgStranger>> observable = XHttp.get("/strvisit/getAllStrVisitByUser")
+                .params("userId", TokenManager.getInstance().getLoginUser().getId())
                 .syncRequest(false)
                 .onMainThread(true)
                 .execute(TypeUtils.getListType(EgStranger.class));

@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gturedi.views.StatefulLayout;
+import com.mylhyl.circledialog.BaseCircleDialog;
+import com.mylhyl.circledialog.CircleDialog;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.adapter.SmartViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -20,6 +22,7 @@ import com.xuexiang.elderguard.core.http.subscriber.TipRequestSubscriber;
 import com.xuexiang.elderguard.entity.EgAcquaintance;
 import com.xuexiang.elderguard.entity.EgRelationship;
 import com.xuexiang.elderguard.manager.TokenManager;
+import com.xuexiang.elderguard.utils.XToastUtils;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xhttp2.exception.ApiException;
 import com.xuexiang.xhttp2.utils.TypeUtils;
@@ -46,6 +49,8 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
     StatefulLayout mLlStateful;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout mRefreshLayout;
+    private BaseCircleDialog dialogFragment;
+
 
     private AcqAdapter acqAdapter;
 
@@ -56,7 +61,19 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
 
     @Override
     public void onItemLongClick(View itemView, int position) {
+        dialogFragment = new CircleDialog.Builder()
+                //.setTypeface(typeface)
+                .setCanceledOnTouchOutside(false)
+                .setCancelable(true)
+                .setTitle("删除")
+                .setSubTitle("是否删除当前联系人")
+                .setNegative("取消", null)
+                .setPositive("确定", v -> {
+                    deleteAcq(acqAdapter.getItem(position));
+                    mRefreshLayout.autoRefresh();
 
+                })
+                .show(getFragmentManager());
     }
 
     @Override
@@ -143,6 +160,33 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
             public void onError(ApiException e) {
                 refreshLayout.finishRefresh(false);
                 mLlStateful.showError(e.getMessage(), null);
+            }
+        });
+    }
+
+    @SuppressLint("CheckResult")
+    public void deleteAcq(EgAcquaintance egAcquaintance) {
+        Observable<Boolean> observable = XHttp.post("/Acq/deleteAcq")
+                .params("AcqId", egAcquaintance.getAcid())
+                .syncRequest(false)
+                .onMainThread(true)
+                .execute(Boolean.class);
+        observable.subscribeWith(new TipRequestSubscriber<Boolean>() {
+            @SuppressLint("CheckResult")
+            @Override
+            protected void onSuccess(Boolean response) {
+                if (response != null) {
+                    XToastUtils.info("删除成功");
+
+                } else {
+                    XToastUtils.info("删除失败");
+                }
+            }
+
+            @SuppressLint("CheckResult")
+            @Override
+            public void onError(ApiException e) {
+                XToastUtils.info("访问错误");
             }
         });
     }

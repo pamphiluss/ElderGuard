@@ -4,9 +4,12 @@ package com.xuexiang.elderguard.core;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
+
 import com.xuexiang.xpage.base.XPageActivity;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.core.CoreSwitchBean;
+import com.xuexiang.xpage.core.PageOption;
 import com.xuexiang.xrouter.facade.service.SerializationService;
 import com.xuexiang.xrouter.launcher.XRouter;
 import com.xuexiang.xui.utils.ResUtils;
@@ -71,6 +74,7 @@ public class BaseActivity extends XPageActivity {
                 .setNewActivity(true);
         return (T) openPage(page);
     }
+
 
     /**
      * 切换fragment
