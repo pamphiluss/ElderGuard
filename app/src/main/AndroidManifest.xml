@@ -109,7 +109,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" /> <!-- 屏幕自适应设计图 -->
 
-        <receiver android:name=".receiver.NotifyBroadCastReceiver">
+        <receiver android:name=".utils.NotifyBroadCastReceiver">
             <intent-filter>
                 <action android:name="com.xuexiang.elderguard.receiver.ACTION_SUBMIT" />
                 <action android:name="com.xuexiang.elderguard.receiver.ACTION_CANCEL" />

@@ -25,7 +25,6 @@ public class WebViewInterceptDialog extends AppCompatActivity implements DialogI
 
     private static final String KEY_INTERCEPT_URL = "key_intercept_url";
 
-    // TODO: 2019-10-30 这里修改你的applink
     public static final String APP_LINK_HOST = "xuexiangjys.club";
     public static final String APP_LINK_ACTION = "com.xuexiang.xui.applink";
 

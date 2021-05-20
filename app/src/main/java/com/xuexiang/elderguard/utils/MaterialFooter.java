@@ -1,4 +1,4 @@
-package com.xuexiang.elderguard.widget;
+package com.xuexiang.elderguard.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

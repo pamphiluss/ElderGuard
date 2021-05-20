@@ -1,4 +1,4 @@
-package com.xuexiang.elderguard.receiver;
+package com.xuexiang.elderguard.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

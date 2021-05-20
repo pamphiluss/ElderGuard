@@ -49,7 +49,6 @@ public class MiddlewareWebViewClient extends MiddlewareWebClientBase {
             //正常加载
             return super.shouldInterceptRequest(view, url);
         } else {
-            //含有广告资源屏蔽请求
             return new WebResourceResponse(null, null, null);
         }
     }
@@ -67,12 +66,7 @@ public class MiddlewareWebViewClient extends MiddlewareWebClientBase {
         }
     }
 
-    /**
-     * 判断是否存在广告的链接
-     *
-     * @param url
-     * @return
-     */
+
     private static boolean hasAdUrl(String url) {
         String[] adUrls = ResUtils.getStringArray(R.array.adBlockUrl);
         for (String adUrl : adUrls) {

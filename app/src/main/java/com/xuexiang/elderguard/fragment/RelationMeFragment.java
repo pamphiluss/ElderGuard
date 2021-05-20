@@ -31,6 +31,7 @@ import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
 import com.xuexiang.xrouter.annotation.AutoWired;
 import com.xuexiang.xrouter.launcher.XRouter;
+import com.xuexiang.xutil.tip.ToastUtils;
 
 import java.util.List;
 
@@ -56,7 +57,8 @@ public class RelationMeFragment extends XPageFragment implements SmartViewHolder
 
     @Override
     public void onItemClick(View itemView, int position) {
-        // TODO:
+        ToastUtils.toast("成员可长按删除重新添加，不支持修改");
+
     }
 
     @Override

@@ -1,11 +1,13 @@
 package com.xuexiang.elderguard.entity;
 
+import java.io.Serializable;
+
 /**
  * eg_acquaintance
  *
  * @author
  */
-public class EgAcquaintance {
+public class EgAcquaintance implements Serializable {
     private Integer acid;
 
     private String name;
