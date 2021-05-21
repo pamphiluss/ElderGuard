@@ -14,9 +14,7 @@ import com.syd.elderguard.utils.CustomPushReceiver;
 import com.syd.elderguard.utils.PushPlatformUtils;
 import com.syd.elderguard.utils.SettingSPUtils;
 import com.syd.elderguard.utils.sdkinit.ANRWatchDogInit;
-import com.syd.elderguard.utils.sdkinit.UMengInit;
 import com.syd.elderguard.utils.sdkinit.XBasicLibInit;
-import com.syd.elderguard.utils.sdkinit.XUpdateInit;
 import com.syd.elderguard.BuildConfig;
 import com.syd.elderguard.R;
 import com.xuexiang.keeplive.KeepLive;
@@ -58,15 +56,12 @@ public class MyApp extends Application {
     private void initLibs() {
         XBasicLibInit.init(this);
 
-        XUpdateInit.init(this);
+
 
         XHttpSDK.init(this);
         XHttpSDK.debug("XHttp");  //需要调试的时候执行
         XHttpSDK.setBaseUrl(SettingSPUtils.getInstance().getApiURL());  //设置网络请求的基础地址
-        //运营统计数据运行时不初始化
-        if (!MyApp.isDebug()) {
-            UMengInit.init(this);
-        }
+
 
         //ANR监控
         ANRWatchDogInit.init();
